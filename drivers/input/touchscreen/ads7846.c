@@ -225,8 +225,9 @@ static void ads7846_restart(struct ads7846 *ts)
 static void __ads7846_disable(struct ads7846 *ts)
 {
 	ads7846_stop(ts);
-	regulator_disable(ts->reg);
-
+	
+	if (ts->reg)
+		regulator_disable(ts->reg);
 	/*
 	 * We know the chip's in low power mode since we always
 	 * leave it that way after every request
@@ -238,10 +239,12 @@ static void __ads7846_enable(struct ads7846 *ts)
 {
 	int error;
 
-	error = regulator_enable(ts->reg);
-	if (error != 0)
-		dev_err(&ts->spi->dev, "Failed to enable supply: %d\n", error);
-
+	if (ts->reg) {
+		error = regulator_enable(ts->reg);
+		
+		if (error != 0)
+			dev_err(&ts->spi->dev, "Failed to enable supply: %d\n", error);
+	}
 	ads7846_restart(ts);
 }
 
@@ -1314,18 +1317,17 @@ static int ads7846_probe(struct spi_device *spi)
 	ads7846_setup_spi_msg(ts, pdata);
 
 	ts->reg = regulator_get(&spi->dev, "vcc");
-	if (IS_ERR(ts->reg)) {
-		err = PTR_ERR(ts->reg);
-		dev_err(&spi->dev, "unable to get regulator: %d\n", err);
-		goto err_free_gpio;
+	if (IS_ERR(ts->reg))
+		ts->reg = NULL;
+	else {
+		err = regulator_enable(ts->reg);
+		if (err) {
+			dev_err(&spi->dev, "unable to enable regulator: %d\n", err);
+			goto err_put_regulator;
+		}
 	}
 
-	err = regulator_enable(ts->reg);
-	if (err) {
-		dev_err(&spi->dev, "unable to enable regulator: %d\n", err);
-		goto err_put_regulator;
-	}
-
+	
 	irq_flags = pdata->irq_flags ? : IRQF_TRIGGER_FALLING;
 	irq_flags |= IRQF_ONESHOT;
 
@@ -1379,10 +1381,11 @@ static int ads7846_probe(struct spi_device *spi)
  err_free_irq:
 	free_irq(spi->irq, ts);
  err_disable_regulator:
-	regulator_disable(ts->reg);
+	if (ts->reg)
+		regulator_disable(ts->reg);
  err_put_regulator:
-	regulator_put(ts->reg);
- err_free_gpio:
+	if (ts->reg)
+		regulator_put(ts->reg);
 	if (!ts->get_pendown_state)
 		gpio_free(ts->gpio_pendown);
  err_cleanup_filter:
@@ -1410,8 +1413,10 @@ static int ads7846_remove(struct spi_device *spi)
 
 	ads784x_hwmon_unregister(spi, ts);
 
-	regulator_disable(ts->reg);
-	regulator_put(ts->reg);
+	if (ts->reg) {
+		regulator_disable(ts->reg);
+		regulator_put(ts->reg);
+	}
 
 	if (!ts->get_pendown_state) {
 		/*

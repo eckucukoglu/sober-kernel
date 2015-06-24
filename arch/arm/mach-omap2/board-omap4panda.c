@@ -1,4 +1,7 @@
 /*
+ * Chipsee pandaboard-es expansion set
+ * edition by Emre Can Kucukoglu <eckucukoglu@gmail.com>
+ *
  * Board support file for OMAP4430 based PandaBoard.
  *
  * Copyright (C) 2010 Texas Instruments
@@ -40,6 +43,10 @@
 #include <asm/mach/arch.h>
 #include <asm/mach/map.h>
 
+#include <linux/spi/ads7846.h>
+#include <linux/spi/spi.h>
+
+#include "id.h"
 #include "common.h"
 #include "soc.h"
 #include "mmc.h"
@@ -249,7 +256,8 @@ static struct twl6040_platform_data twl6040_data = {
 static struct i2c_board_info __initdata panda_i2c_1_boardinfo[] = {
 	{
 		I2C_BOARD_INFO("twl6040", 0x4b),
-		.irq = 119 + OMAP44XX_IRQ_GIC_START,
+		/* OMAP44XX_IRQ_GIC_START = 32 */
+		.irq = 119 + OMAP44XX_IRQ_GIC_START, 
 		.platform_data = &twl6040_data,
 	},
 };
@@ -267,6 +275,15 @@ static struct i2c_board_info __initdata panda_i2c_eeprom[] = {
 	},
 };
 
+/* ft5x06 touchscreen device is not used in pandaboard-es-exp set */
+/*
+static struct i2c_board_info __initdata panda_i2c2_boardinfo[] = {
+        {
+                I2C_BOARD_INFO("ft5x06_ts", 0x38),
+        },
+};
+*/
+
 static int __init omap4_panda_i2c_init(void)
 {
 	omap4_pmic_get_config(&omap4_panda_twldata, TWL_COMMON_PDATA_USB,
@@ -283,7 +300,14 @@ static int __init omap4_panda_i2c_init(void)
 			TWL_COMMON_REGULATOR_V2V1);
 	omap4_pmic_init("twl6030", &omap4_panda_twldata, panda_i2c_1_boardinfo,
 			ARRAY_SIZE(panda_i2c_1_boardinfo));
+	
+	
 	omap_register_i2c_bus(2, 400, NULL, 0);
+
+	//panda_i2c2_boardinfo[0].irq = gpio_to_irq(34);
+	//omap_register_i2c_bus(2, 100, panda_i2c2_boardinfo, 
+	//	ARRAY_SIZE(panda_i2c2_boardinfo));
+		
 	/*
 	 * Bus 3 is attached to the DVI port where devices like the pico DLP
 	 * projector don't work reliably with 400kHz
@@ -297,9 +321,9 @@ static int __init omap4_panda_i2c_init(void)
 #ifdef CONFIG_OMAP_MUX
 static struct omap_board_mux board_mux[] __initdata = {
 	/* WLAN IRQ - GPIO 53 */
-	OMAP4_MUX(GPMC_NCS3, OMAP_MUX_MODE3 | OMAP_PIN_INPUT),
+//	OMAP4_MUX(GPMC_NCS3, OMAP_MUX_MODE3 | OMAP_PIN_INPUT),
 	/* WLAN POWER ENABLE - GPIO 43 */
-	OMAP4_MUX(GPMC_A19, OMAP_MUX_MODE3 | OMAP_PIN_OUTPUT),
+//	OMAP4_MUX(GPMC_A19, OMAP_MUX_MODE3 | OMAP_PIN_OUTPUT),
 	/* WLAN SDIO: MMC5 CMD */
 	OMAP4_MUX(SDMMC5_CMD, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLUP),
 	/* WLAN SDIO: MMC5 CLK */
@@ -367,37 +391,160 @@ static struct omap_board_mux board_mux[] __initdata = {
 	OMAP4_MUX(DPM_EMU18, OMAP_PIN_OUTPUT | OMAP_MUX_MODE5),
 	/* dispc2_data0 */
 	OMAP4_MUX(DPM_EMU19, OMAP_PIN_OUTPUT | OMAP_MUX_MODE5),
+	
 	/* NIRQ2 for twl6040 */
-	OMAP4_MUX(SYS_NIRQ2, OMAP_MUX_MODE0 |
-		  OMAP_PIN_INPUT_PULLUP | OMAP_PIN_OFF_WAKEUPENABLE),
+//	OMAP4_MUX(SYS_NIRQ2, OMAP_MUX_MODE0 |
+//		  OMAP_PIN_INPUT_PULLUP | OMAP_PIN_OFF_WAKEUPENABLE),
 	/* GPIO_127 for twl6040 */
-	OMAP4_MUX(HDQ_SIO, OMAP_MUX_MODE3 | OMAP_PIN_OUTPUT),
+//	OMAP4_MUX(HDQ_SIO, OMAP_MUX_MODE3 | OMAP_PIN_OUTPUT),
 	/* McPDM */
-	OMAP4_MUX(ABE_PDM_UL_DATA, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
-	OMAP4_MUX(ABE_PDM_DL_DATA, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
-	OMAP4_MUX(ABE_PDM_FRAME, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLUP),
-	OMAP4_MUX(ABE_PDM_LB_CLK, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
-	OMAP4_MUX(ABE_CLKS, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
+//	OMAP4_MUX(ABE_PDM_UL_DATA, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
+//	OMAP4_MUX(ABE_PDM_DL_DATA, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
+//	OMAP4_MUX(ABE_PDM_FRAME, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLUP),
+//	OMAP4_MUX(ABE_PDM_LB_CLK, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
+//	OMAP4_MUX(ABE_CLKS, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
 	/* McBSP1 */
-	OMAP4_MUX(ABE_MCBSP1_CLKX, OMAP_MUX_MODE0 | OMAP_PIN_INPUT),
-	OMAP4_MUX(ABE_MCBSP1_DR, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
-	OMAP4_MUX(ABE_MCBSP1_DX, OMAP_MUX_MODE0 | OMAP_PIN_OUTPUT |
-		  OMAP_PULL_ENA),
-	OMAP4_MUX(ABE_MCBSP1_FSX, OMAP_MUX_MODE0 | OMAP_PIN_INPUT),
+//	OMAP4_MUX(ABE_MCBSP1_CLKX, OMAP_MUX_MODE0 | OMAP_PIN_INPUT),
+//	OMAP4_MUX(ABE_MCBSP1_DR, OMAP_MUX_MODE0 | OMAP_PIN_INPUT_PULLDOWN),
+//	OMAP4_MUX(ABE_MCBSP1_DX, OMAP_MUX_MODE0 | OMAP_PIN_OUTPUT |
+//		  OMAP_PULL_ENA),
+//	OMAP4_MUX(ABE_MCBSP1_FSX, OMAP_MUX_MODE0 | OMAP_PIN_INPUT),
 
 	/* UART2 - BT/FM/GPS shared transport */
-	OMAP4_MUX(UART2_CTS,	OMAP_PIN_INPUT	| OMAP_MUX_MODE0),
-	OMAP4_MUX(UART2_RTS,	OMAP_PIN_OUTPUT	| OMAP_MUX_MODE0),
-	OMAP4_MUX(UART2_RX,	OMAP_PIN_INPUT	| OMAP_MUX_MODE0),
-	OMAP4_MUX(UART2_TX,	OMAP_PIN_OUTPUT	| OMAP_MUX_MODE0),
+//	OMAP4_MUX(UART2_CTS,	OMAP_PIN_INPUT	| OMAP_MUX_MODE0),
+//	OMAP4_MUX(UART2_RTS,	OMAP_PIN_OUTPUT	| OMAP_MUX_MODE0),
+//	OMAP4_MUX(UART2_RX,	OMAP_PIN_INPUT	| OMAP_MUX_MODE0),
+//	OMAP4_MUX(UART2_TX,	OMAP_PIN_OUTPUT	| OMAP_MUX_MODE0),
 
+	/* TOUCHSCREEN IRQ */
+    OMAP4_MUX(GPMC_AD15, OMAP_MUX_MODE3 | OMAP_PIN_INPUT | OMAP_PIN_OFF_WAKEUPENABLE),
+	/* LCD Backlight - GPIO 50 */
+	OMAP4_MUX(GPMC_NCS0, OMAP_MUX_MODE3 | OMAP_PIN_OUTPUT),
 	{ .reg_offset = OMAP_MUX_TERMINATOR },
 };
 
+/* 
+ * Since generic board serial initialization can 
+ * handle chipsee expansion properties, no need 
+ * to set explicitly these settings:
+ */
+
+/*
+static struct omap_device_pad serial2_pads[] __initdata = {
+	OMAP_MUX_STATIC("uart2_cts.uart2_cts",
+			 OMAP_PIN_INPUT_PULLUP | OMAP_MUX_MODE0),
+	OMAP_MUX_STATIC("uart2_rts.uart2_rts",
+			 OMAP_PIN_OUTPUT | OMAP_MUX_MODE0),
+	OMAP_MUX_STATIC("uart2_rx.uart2_rx",
+			 OMAP_PIN_INPUT_PULLUP | OMAP_MUX_MODE0),
+	OMAP_MUX_STATIC("uart2_tx.uart2_tx",
+			 OMAP_PIN_OUTPUT | OMAP_MUX_MODE0),
+};
+
+static struct omap_device_pad serial3_pads[] __initdata = {
+	OMAP_MUX_STATIC("uart3_cts_rctx.uart3_cts_rctx",
+			 OMAP_PIN_INPUT_PULLUP | OMAP_MUX_MODE0),
+	OMAP_MUX_STATIC("uart3_rts_sd.uart3_rts_sd",
+			 OMAP_PIN_OUTPUT | OMAP_MUX_MODE0),
+	OMAP_MUX_STATIC("uart3_rx_irrx.uart3_rx_irrx",
+			 OMAP_PIN_INPUT | OMAP_MUX_MODE0),
+	OMAP_MUX_STATIC("uart3_tx_irtx.uart3_tx_irtx",
+			 OMAP_PIN_OUTPUT | OMAP_MUX_MODE0),
+};
+
+static struct omap_device_pad serial4_pads[] __initdata = {
+	OMAP_MUX_STATIC("uart4_rx.uart4_rx",
+			 OMAP_PIN_INPUT | OMAP_MUX_MODE0),
+	OMAP_MUX_STATIC("uart4_tx.uart4_tx",
+			 OMAP_PIN_OUTPUT | OMAP_MUX_MODE0),
+};
+
+static struct omap_board_data serial2_data __initdata = {
+	.id             = 1,
+	.pads           = serial2_pads,
+	.pads_cnt       = ARRAY_SIZE(serial2_pads),
+};
+
+static struct omap_board_data serial3_data __initdata = {
+	.id             = 2,
+	.pads           = serial3_pads,
+	.pads_cnt       = ARRAY_SIZE(serial3_pads),
+};
+
+static struct omap_board_data serial4_data __initdata = {
+	.id             = 3,
+	.pads           = serial4_pads,
+	.pads_cnt       = ARRAY_SIZE(serial4_pads),
+};
+
+static inline void board_serial_init(void)
+{
+	struct omap_board_data bdata;
+	bdata.flags     = 0;
+	bdata.pads      = NULL;
+	bdata.pads_cnt  = 0;
+	bdata.id        = 0;
+	// pass dummy data for UART1
+	omap_serial_init_port(&bdata, NULL);
+
+	omap_serial_init_port(&serial2_data, NULL);
+	omap_serial_init_port(&serial3_data, NULL);
+	omap_serial_init_port(&serial4_data, NULL);
+}
+*/
 #else
 #define board_mux	NULL
 #endif
 
+#define PANDABOARD_TS_GPIO       39
+#include <linux/platform_data/spi-omap2-mcspi.h>
+
+static struct omap2_mcspi_device_config ads7846_mcspi_config = {
+        .turbo_mode     = 0,
+};
+
+static int ads7846_get_pendown_state(void)
+{
+        return !gpio_get_value(PANDABOARD_TS_GPIO);
+}
+
+struct ads7846_platform_data ads7846_config = {
+        .x_max                  = 0xFFF,
+        .y_max                  = 0xFFF,
+        .x_plate_ohms           = 180,
+        .pressure_max           = 255,
+        .debounce_max           = 10,
+        .debounce_tol           = 3,
+        .debounce_rep           = 1,
+        .get_pendown_state      = ads7846_get_pendown_state,
+        .keep_vref_on           = 1,
+        .wakeup                 = true,
+};
+
+struct spi_board_info pandaboard_spi_board_info[] = {
+        [0] = {
+                .modalias               = "ads7846",
+                .bus_num                = 1,
+                .chip_select            = 0,
+                .max_speed_hz           = 1500000,
+                .controller_data        = &ads7846_mcspi_config,
+                .platform_data          = &ads7846_config,
+        },
+};
+
+static void ads7846_dev_init(void)
+{
+	int r;
+	printk("Initialize ads7846 touch screen controller\n");
+
+	if (gpio_request(PANDABOARD_TS_GPIO, "ADS7846 pendown") < 0)
+		printk(KERN_ERR "can't get ads7846 pen down GPIO\n");
+
+	r = gpio_direction_input(PANDABOARD_TS_GPIO);
+	printk("MMIS: ads7846_dev_init:gpio_direction_input: %d\n", r);
+	
+	gpio_set_debounce(PANDABOARD_TS_GPIO, 1);
+}
 
 static void omap4_panda_init_rev(void)
 {
@@ -429,16 +576,31 @@ static void __init omap4_panda_init(void)
 
 	omap4_panda_init_rev();
 	omap4_panda_i2c_init();
+	
+	pandaboard_spi_board_info[0].irq = gpio_to_irq(PANDABOARD_TS_GPIO);
+	
+	spi_register_board_info(pandaboard_spi_board_info, ARRAY_SIZE(pandaboard_spi_board_info));
+	ads7846_dev_init();
+	
 	platform_add_devices(panda_devices, ARRAY_SIZE(panda_devices));
+	
 	platform_device_register(&omap_vwlan_device);
+	/* Generic board serial initialization can handle expansion properties */
+	// board_serial_init();
 	omap_serial_init();
 	omap_sdrc_init(NULL, NULL);
 	omap4_twl6030_hsmmc_init(mmc);
 	omap4_ehci_init();
 	usb_bind_phy("musb-hdrc.2.auto", 0, "omap-usb2.3.auto");
 	usb_musb_init(&musb_board_data);
+	
 	omap4_panda_display_init();
 }
+
+static const char *omap4_panda_match[] __initdata = {
+	"ti,omap4-panda",
+	NULL,
+};
 
 MACHINE_START(OMAP4_PANDA, "OMAP4 Panda board")
 	/* Maintainer: David Anders - Texas Instruments Inc */
@@ -452,4 +614,5 @@ MACHINE_START(OMAP4_PANDA, "OMAP4 Panda board")
 	.init_late	= omap4430_init_late,
 	.init_time	= omap4_local_timer_init,
 	.restart	= omap44xx_restart,
+	.dt_compat	= omap4_panda_match,
 MACHINE_END

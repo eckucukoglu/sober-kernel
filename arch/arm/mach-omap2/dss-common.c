@@ -55,6 +55,61 @@ static struct omap_dss_device omap4_panda_dvi_device = {
 	.channel		= OMAP_DSS_CHANNEL_LCD2,
 };
 
+/* Chipsee Display LCD */
+#define PANDA_EXP_LCD_ENABLE_GPIO	50
+
+static int omap4_panda_enable_lcd(struct omap_dss_device *dssdev)
+{
+	printk("Now enable Panda_EXP LCD\n");
+	gpio_request(PANDA_EXP_LCD_ENABLE_GPIO, "lcd_enable_gpio");
+
+	gpio_direction_output(PANDA_EXP_LCD_ENABLE_GPIO, 1);
+	gpio_set_value(PANDA_EXP_LCD_ENABLE_GPIO, 1);
+
+	gpio_set_value(dssdev->reset_gpio, 1);
+	return 0;
+}
+
+static void omap4_panda_disable_lcd(struct omap_dss_device *dssdev)
+{
+	printk("Now disable Panda_EXP LCD\n");
+	gpio_request(PANDA_EXP_LCD_ENABLE_GPIO, "lcd_enable_gpio");
+
+	gpio_direction_output(PANDA_EXP_LCD_ENABLE_GPIO, 0);
+	gpio_set_value(PANDA_EXP_LCD_ENABLE_GPIO, 0);
+
+	gpio_set_value(dssdev->reset_gpio, 0);
+}
+
+/* Using generic display panel */
+static struct panel_generic_dpi_data omap4_lcd_panel = {
+	.name			= "innolux_hj070na13a",
+	.platform_enable	= omap4_panda_enable_lcd,
+	.platform_disable	= omap4_panda_disable_lcd,
+};
+
+struct omap_dss_device omap4_panda_lcd_device = {
+	.type			= OMAP_DISPLAY_TYPE_DPI,
+	.name			= "lcd",
+	.driver_name		= "chipsee_dpi_panel",
+	.data			= &omap4_lcd_panel,
+	.phy.dpi.data_lines	= 24,
+	.reset_gpio		= PANDA_EXP_LCD_ENABLE_GPIO,
+	.channel		= OMAP_DSS_CHANNEL_LCD2,
+};
+
+int __init omap4_panda_lcd_init(void)
+{
+	int r;
+
+	r = gpio_request_one(omap4_panda_lcd_device.reset_gpio,
+				GPIOF_OUT_INIT_LOW, "LCD PD");
+	if (r)
+		pr_err("Failed to get LCD powerdown GPIO\n");
+
+	return r;
+}
+
 static struct omap_dss_hdmi_data omap4_panda_hdmi_data = {
 	.ct_cp_hpd_gpio = HDMI_GPIO_CT_CP_HPD,
 	.ls_oe_gpio = HDMI_GPIO_LS_OE,
@@ -70,6 +125,7 @@ static struct omap_dss_device  omap4_panda_hdmi_device = {
 };
 
 static struct omap_dss_device *omap4_panda_dss_devices[] = {
+	&omap4_panda_lcd_device,
 	&omap4_panda_dvi_device,
 	&omap4_panda_hdmi_device,
 };
@@ -77,11 +133,17 @@ static struct omap_dss_device *omap4_panda_dss_devices[] = {
 static struct omap_dss_board_info omap4_panda_dss_data = {
 	.num_devices	= ARRAY_SIZE(omap4_panda_dss_devices),
 	.devices	= omap4_panda_dss_devices,
-	.default_device	= &omap4_panda_dvi_device,
+	.default_device	= &omap4_panda_lcd_device,
 };
 
 void __init omap4_panda_display_init(void)
 {
+	int r;
+	
+	r = omap4_panda_lcd_init();
+	if (r)
+		pr_err("error initializing panda LCD\n");
+		
 	omap_display_init(&omap4_panda_dss_data);
 
 	/*

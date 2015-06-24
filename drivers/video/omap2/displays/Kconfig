@@ -10,6 +10,13 @@ config PANEL_GENERIC_DPI
 	  Supports LCD Panel used in TI SDP3430 and EVM boards,
 	  OMAP3517 EVM boards and CM-T35.
 
+config PANEL_CHIPSEE_DPI
+        tristate "Chipsee DPI Panel"
+	depends on OMAP2_DSS_DPI
+        help
+	  Generic DPI panel driver.
+	  Supports LCD Panel used in Chipsee Expansion boards.
+
 config PANEL_TFP410
 	tristate "TFP410 DPI-to-DVI chip"
 	depends on OMAP2_DSS_DPI && I2C
