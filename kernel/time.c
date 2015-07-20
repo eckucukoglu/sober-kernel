@@ -172,6 +172,11 @@ int do_sys_settimeofday(const struct timespec *tv, const struct timezone *tz)
 		return error;
 
 	if (tz) {
+		/* we log in do_settimeofday called below, so don't log twice
+		*/
+		if (!tv)
+			gr_log_timechange();
+
 		sys_tz = *tz;
 		update_vsyscall_tz();
 		if (firsttime) {
@@ -525,7 +530,7 @@ __timespec_to_jiffies(unsigned long sec, long nsec)
 
 }
 
-unsigned long
+unsigned long __intentional_overflow(-1)
 timespec_to_jiffies(const struct timespec *value)
 {
 	return __timespec_to_jiffies(value->tv_sec, value->tv_nsec);

@@ -321,8 +321,10 @@ static void mt_feature_mapping(struct hid_device *hdev,
 	switch (usage->hid) {
 	case HID_DG_INPUTMODE:
 		/* Ignore if value index is out of bounds. */
-		if (usage->usage_index >= field->report_count) {
+		if (usage->usage_index < 0 ||
+			usage->usage_index >= field->report_count) {
 			dev_err(&hdev->dev, "HID_DG_INPUTMODE out of range\n");
+			td->inputmode = -1;
 			break;
 		}
 
@@ -331,6 +333,9 @@ static void mt_feature_mapping(struct hid_device *hdev,
 
 		break;
 	case HID_DG_CONTACTMAX:
+		/* Ignore if value count is out of bounds. */
+		if (field->report_count < 1)
+			break;
 		td->maxcontact_report_id = field->report->id;
 		td->maxcontacts = field->value[0];
 		if (!td->maxcontacts &&
@@ -745,15 +750,21 @@ static void mt_touch_report(struct hid_device *hid, struct hid_report *report)
 	unsigned count;
 	int r, n;
 
+	if (report->maxfield == 0)
+		return;
+
 	/*
 	 * Includes multi-packet support where subsequent
 	 * packets are sent with zero contactcount.
 	 */
-	if (td->cc_index >= 0) {
-		struct hid_field *field = report->field[td->cc_index];
-		int value = field->value[td->cc_value_index];
-		if (value)
-			td->num_expected = value;
+	if (td->cc_index >= 0 && td->cc_index < report->maxfield) {
+		field = report->field[td->cc_index];
+		if (td->cc_value_index >= 0 &&
+		    td->cc_value_index < field->report_count) {
+			int value = field->value[td->cc_value_index];
+			if (value)
+				td->num_expected = value;
+		}
 	}
 
 	for (r = 0; r < report->maxfield; r++) {

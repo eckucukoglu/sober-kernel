@@ -126,8 +126,11 @@ static inline void sanitize_i387_state(struct task_struct *tsk)
 #define user_insn(insn, output, input...)				\
 ({									\
 	int err;							\
+	pax_open_userland();						\
 	asm volatile(ASM_STAC "\n"					\
-		     "1:" #insn "\n\t"					\
+		     "1:"						\
+		     __copyuser_seg					\
+		     #insn "\n\t"					\
 		     "2: " ASM_CLAC "\n"				\
 		     ".section .fixup,\"ax\"\n"				\
 		     "3:  movl $-1,%[err]\n"				\
@@ -136,6 +139,7 @@ static inline void sanitize_i387_state(struct task_struct *tsk)
 		     _ASM_EXTABLE(1b, 3b)				\
 		     : [err] "=r" (err), output				\
 		     : "0"(0), input);					\
+	pax_close_userland();						\
 	err;								\
 })
 

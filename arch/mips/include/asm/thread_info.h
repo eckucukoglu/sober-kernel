@@ -115,6 +115,8 @@ static inline struct thread_info *current_thread_info(void)
 #define TIF_32BIT_ADDR		23	/* 32-bit address space (o32/n32) */
 #define TIF_FPUBOUND		24	/* thread bound to FPU-full CPU set */
 #define TIF_LOAD_WATCH		25	/* If set, load watch registers */
+/* li takes a 32bit immediate */
+#define TIF_GRSEC_SETXID	29	/* update credentials on syscall entry/exit */
 #define TIF_SYSCALL_TRACE	31	/* syscall trace active */
 
 #define _TIF_SYSCALL_TRACE	(1<<TIF_SYSCALL_TRACE)

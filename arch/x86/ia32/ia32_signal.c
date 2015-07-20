@@ -340,7 +340,7 @@ static void __user *get_sigframe(struct ksignal *ksig, struct pt_regs *regs,
 	sp -= frame_size;
 	/* Align the stack pointer according to the i386 ABI,
 	 * i.e. so that on function entry ((sp + 4) & 15) == 0. */
-	sp = ((sp + 4) & -16ul) - 4;
+	sp = ((sp - 12) & -16ul) - 4;
 	return (void __user *) sp;
 }
 
@@ -398,7 +398,7 @@ int ia32_setup_frame(int sig, struct ksignal *ksig,
 		 * These are actually not used anymore, but left because some
 		 * gdb versions depend on them as a marker.
 		 */
-		put_user_ex(*((u64 *)&code), (u64 __user *)frame->retcode);
+		put_user_ex(*((const u64 *)&code), (u64 __user *)frame->retcode);
 	} put_user_catch(err);
 
 	if (err)
@@ -440,7 +440,7 @@ int ia32_setup_rt_frame(int sig, struct ksignal *ksig,
 		0xb8,
 		__NR_ia32_rt_sigreturn,
 		0x80cd,
-		0,
+		0
 	};
 
 	frame = get_sigframe(ksig, regs, sizeof(*frame), &fpstate);
