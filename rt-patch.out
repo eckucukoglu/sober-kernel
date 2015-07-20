@@ -1,0 +1,738 @@
+patching file Documentation/hwlat_detector.txt
+patching file Documentation/sysrq.txt
+patching file Documentation/trace/histograms.txt
+patching file arch/Kconfig
+patching file arch/alpha/include/asm/Kbuild
+patching file arch/alpha/mm/fault.c
+Hunk #1 succeeded at 225 (offset 118 lines).
+patching file arch/arc/include/asm/Kbuild
+patching file arch/arm/Kconfig
+patching file arch/arm/include/asm/Kbuild
+patching file arch/arm/include/asm/cmpxchg.h
+Hunk #1 succeeded at 129 (offset 2 lines).
+patching file arch/arm/include/asm/futex.h
+Hunk #1 succeeded at 96 with fuzz 2 (offset 6 lines).
+Hunk #2 succeeded at 111 with fuzz 1 (offset 8 lines).
+patching file arch/arm/include/asm/switch_to.h
+patching file arch/arm/include/asm/thread_info.h
+Hunk #3 succeeded at 166 (offset 4 lines).
+patching file arch/arm/kernel/asm-offsets.c
+patching file arch/arm/kernel/entry-armv.S
+Hunk #1 succeeded at 299 (offset 94 lines).
+Hunk #2 succeeded at 325 (offset 94 lines).
+patching file arch/arm/kernel/perf_event_cpu.c
+patching file arch/arm/kernel/process.c
+Hunk #1 succeeded at 431 (offset -5 lines).
+patching file arch/arm/kernel/signal.c
+Hunk #1 succeeded at 581 (offset -3 lines).
+patching file arch/arm/kernel/unwind.c
+patching file arch/arm/kvm/arm.c
+patching file arch/arm/kvm/psci.c
+patching file arch/arm/mach-at91/at91rm9200_time.c
+patching file arch/arm/mach-at91/at91sam926x_time.c
+patching file arch/arm/mach-exynos/platsmp.c
+patching file arch/arm/mach-msm/platsmp.c
+patching file arch/arm/mach-omap2/omap-smp.c
+patching file arch/arm/mach-prima2/platsmp.c
+patching file arch/arm/mach-spear/platsmp.c
+patching file arch/arm/mach-ux500/platsmp.c
+patching file arch/arm/mm/fault.c
+Hunk #1 succeeded at 299 (offset 22 lines).
+Hunk #2 succeeded at 480 (offset 49 lines).
+Hunk #3 succeeded at 549 (offset 49 lines).
+patching file arch/arm/mm/highmem.c
+patching file arch/arm/plat-versatile/platsmp.c
+patching file arch/arm64/include/asm/Kbuild
+patching file arch/avr32/include/asm/Kbuild
+patching file arch/avr32/mm/fault.c
+Hunk #1 succeeded at 98 (offset 17 lines).
+patching file arch/blackfin/include/asm/Kbuild
+patching file arch/c6x/include/asm/Kbuild
+patching file arch/cris/include/asm/Kbuild
+patching file arch/cris/mm/fault.c
+patching file arch/frv/include/asm/Kbuild
+patching file arch/frv/mm/fault.c
+patching file arch/hexagon/include/asm/Kbuild
+patching file arch/ia64/include/asm/Kbuild
+patching file arch/ia64/mm/fault.c
+Hunk #1 succeeded at 113 (offset 17 lines).
+patching file arch/m32r/include/asm/Kbuild
+patching file arch/m32r/mm/fault.c
+patching file arch/m68k/include/asm/Kbuild
+patching file arch/m68k/mm/fault.c
+patching file arch/metag/include/asm/Kbuild
+patching file arch/microblaze/include/asm/Kbuild
+patching file arch/microblaze/mm/fault.c
+patching file arch/mips/Kconfig
+patching file arch/mips/include/asm/Kbuild
+patching file arch/mips/kernel/signal.c
+patching file arch/mips/mm/fault.c
+Hunk #1 succeeded at 105 (offset 17 lines).
+patching file arch/mn10300/include/asm/Kbuild
+patching file arch/mn10300/mm/fault.c
+patching file arch/openrisc/include/asm/Kbuild
+patching file arch/parisc/include/asm/Kbuild
+patching file arch/parisc/mm/fault.c
+Hunk #1 succeeded at 288 (offset 111 lines).
+patching file arch/powerpc/Kconfig
+patching file arch/powerpc/include/asm/Kbuild
+patching file arch/powerpc/include/asm/kvm_host.h
+patching file arch/powerpc/include/asm/thread_info.h
+Hunk #2 succeeded at 92 with fuzz 2.
+Hunk #3 FAILED at 108.
+Hunk #4 FAILED at 127.
+2 out of 4 hunks FAILED -- saving rejects to file arch/powerpc/include/asm/thread_info.h.rej
+patching file arch/powerpc/kernel/asm-offsets.c
+patching file arch/powerpc/kernel/entry_32.S
+patching file arch/powerpc/kernel/entry_64.S
+patching file arch/powerpc/kernel/irq.c
+patching file arch/powerpc/kernel/misc_32.S
+patching file arch/powerpc/kernel/misc_64.S
+patching file arch/powerpc/kernel/time.c
+patching file arch/powerpc/kvm/book3s_hv.c
+patching file arch/powerpc/mm/fault.c
+Hunk #1 succeeded at 292 (offset 31 lines).
+patching file arch/powerpc/platforms/52xx/mpc52xx_pic.c
+patching file arch/powerpc/platforms/8xx/m8xx_setup.c
+patching file arch/powerpc/sysdev/cpm1.c
+patching file arch/s390/include/asm/Kbuild
+patching file arch/s390/include/asm/kvm_host.h
+patching file arch/s390/mm/fault.c
+patching file arch/score/include/asm/Kbuild
+patching file arch/score/mm/fault.c
+patching file arch/sh/include/asm/Kbuild
+patching file arch/sh/kernel/irq.c
+patching file arch/sh/mm/fault.c
+patching file arch/sparc/Kconfig
+patching file arch/sparc/include/asm/Kbuild
+patching file arch/sparc/kernel/irq_64.c
+patching file arch/sparc/kernel/setup_32.c
+patching file arch/sparc/kernel/setup_64.c
+patching file arch/sparc/mm/fault_32.c
+Hunk #1 succeeded at 473 (offset 274 lines).
+patching file arch/sparc/mm/fault_64.c
+Hunk #1 succeeded at 793 (offset 463 lines).
+patching file arch/tile/include/asm/Kbuild
+patching file arch/tile/mm/fault.c
+patching file arch/um/include/asm/Kbuild
+patching file arch/um/kernel/trap.c
+patching file arch/unicore32/include/asm/Kbuild
+patching file arch/x86/Kconfig
+patching file arch/x86/crypto/aesni-intel_glue.c
+patching file arch/x86/crypto/cast5_avx_glue.c
+patching file arch/x86/crypto/glue_helper.c
+patching file arch/x86/include/asm/Kbuild
+patching file arch/x86/include/asm/signal.h
+patching file arch/x86/include/asm/stackprotector.h
+patching file arch/x86/include/asm/thread_info.h
+Hunk #2 succeeded at 77 (offset -6 lines).
+Hunk #3 succeeded at 104 (offset -5 lines).
+Hunk #4 succeeded at 156 with fuzz 1 (offset -4 lines).
+patching file arch/x86/include/asm/uv/uv_bau.h
+patching file arch/x86/include/asm/uv/uv_hub.h
+patching file arch/x86/kernel/apic/io_apic.c
+patching file arch/x86/kernel/apic/x2apic_uv_x.c
+patching file arch/x86/kernel/asm-offsets.c
+Hunk #1 FAILED at 33.
+1 out of 1 hunk FAILED -- saving rejects to file arch/x86/kernel/asm-offsets.c.rej
+patching file arch/x86/kernel/cpu/mcheck/mce.c
+Hunk #3 succeeded at 1259 (offset 1 line).
+Hunk #4 succeeded at 1269 (offset 1 line).
+Hunk #5 succeeded at 1293 (offset 1 line).
+Hunk #6 succeeded at 1305 (offset 1 line).
+Hunk #7 succeeded at 1345 (offset 1 line).
+Hunk #8 succeeded at 1409 (offset 1 line).
+Hunk #9 succeeded at 1681 (offset 1 line).
+Hunk #10 succeeded at 1690 (offset 1 line).
+Hunk #11 succeeded at 2359 (offset 3 lines).
+Hunk #12 succeeded at 2387 (offset 3 lines).
+Hunk #13 succeeded at 2395 (offset 3 lines).
+Hunk #14 succeeded at 2410 (offset 3 lines).
+Hunk #15 succeeded at 2474 (offset 3 lines).
+patching file arch/x86/kernel/entry_32.S
+Hunk #1 FAILED at 364.
+Hunk #2 succeeded at 835 (offset 227 lines).
+Hunk #3 FAILED at 621.
+2 out of 3 hunks FAILED -- saving rejects to file arch/x86/kernel/entry_32.S.rej
+patching file arch/x86/kernel/entry_64.S
+Hunk #1 succeeded at 1122 (offset 445 lines).
+Hunk #2 succeeded at 1245 (offset 455 lines).
+Hunk #3 succeeded at 1582 (offset 472 lines).
+Hunk #4 succeeded at 1616 (offset 472 lines).
+Hunk #5 succeeded at 1893 (offset 529 lines).
+Hunk #6 FAILED at 1384.
+Hunk #7 succeeded at 2098 (offset 545 lines).
+1 out of 7 hunks FAILED -- saving rejects to file arch/x86/kernel/entry_64.S.rej
+patching file arch/x86/kernel/irq_32.c
+Hunk #1 succeeded at 138 (offset -11 lines).
+Hunk #2 succeeded at 175 (offset -5 lines).
+patching file arch/x86/kernel/irq_64.c
+patching file arch/x86/kernel/process_32.c
+Hunk #2 succeeded at 216 (offset 1 line).
+Hunk #3 succeeded at 328 (offset 5 lines).
+patching file arch/x86/kernel/signal.c
+Hunk #1 succeeded at 753 (offset 5 lines).
+patching file arch/x86/kernel/traps.c
+Hunk #1 succeeded at 79 (offset -6 lines).
+Hunk #2 succeeded at 104 (offset -6 lines).
+Hunk #3 succeeded at 392 (offset 30 lines).
+Hunk #4 FAILED at 499.
+Hunk #5 succeeded at 554 (offset 30 lines).
+1 out of 5 hunks FAILED -- saving rejects to file arch/x86/kernel/traps.c.rej
+patching file arch/x86/kvm/lapic.c
+patching file arch/x86/kvm/x86.c
+Hunk #1 succeeded at 5378 (offset 2 lines).
+patching file arch/x86/mm/fault.c
+Hunk #1 succeeded at 1301 (offset 208 lines).
+patching file arch/x86/mm/highmem_32.c
+Hunk #2 FAILED at 45.
+Hunk #3 succeeded at 92 (offset 4 lines).
+1 out of 3 hunks FAILED -- saving rejects to file arch/x86/mm/highmem_32.c.rej
+patching file arch/x86/mm/iomap_32.c
+Hunk #2 FAILED at 65.
+Hunk #3 succeeded at 115 (offset 4 lines).
+1 out of 3 hunks FAILED -- saving rejects to file arch/x86/mm/iomap_32.c.rej
+patching file arch/x86/platform/uv/tlb_uv.c
+patching file arch/x86/platform/uv/uv_time.c
+patching file arch/xtensa/include/asm/Kbuild
+patching file arch/xtensa/mm/fault.c
+patching file block/blk-core.c
+patching file block/blk-ioc.c
+patching file block/blk-iopoll.c
+patching file block/blk-softirq.c
+patching file crypto/algapi.c
+patching file crypto/api.c
+patching file crypto/internal.h
+patching file drivers/acpi/acpica/acglobal.h
+patching file drivers/acpi/acpica/hwregs.c
+patching file drivers/acpi/acpica/hwxface.c
+patching file drivers/acpi/acpica/utmutex.c
+patching file drivers/ata/libata-sff.c
+patching file drivers/char/random.c
+Hunk #1 succeeded at 688 (offset 12 lines).
+Hunk #2 succeeded at 734 (offset 12 lines).
+Hunk #3 succeeded at 754 (offset 12 lines).
+Hunk #4 succeeded at 777 (offset 12 lines).
+patching file drivers/clocksource/tcb_clksrc.c
+patching file drivers/gpio/gpio-omap.c
+patching file drivers/gpu/drm/drm_irq.c
+patching file drivers/gpu/drm/i915/i915_gem.c
+patching file drivers/gpu/drm/i915/i915_gem_execbuffer.c
+patching file drivers/i2c/busses/i2c-omap.c
+patching file drivers/ide/alim15x3.c
+patching file drivers/ide/hpt366.c
+patching file drivers/ide/ide-io-std.c
+patching file drivers/ide/ide-io.c
+patching file drivers/ide/ide-iops.c
+patching file drivers/ide/ide-probe.c
+patching file drivers/ide/ide-taskfile.c
+patching file drivers/infiniband/ulp/ipoib/ipoib_multicast.c
+patching file drivers/input/gameport/gameport.c
+patching file drivers/leds/trigger/Kconfig
+patching file drivers/md/bcache/Kconfig
+patching file drivers/md/dm.c
+patching file drivers/md/raid5.c
+patching file drivers/md/raid5.h
+patching file drivers/misc/Kconfig
+patching file drivers/misc/Makefile
+patching file drivers/misc/hwlat_detector.c
+patching file drivers/mmc/host/mmci.c
+patching file drivers/net/Kconfig
+patching file drivers/net/ethernet/3com/3c59x.c
+patching file drivers/net/ethernet/atheros/atl1c/atl1c_main.c
+patching file drivers/net/ethernet/atheros/atl1e/atl1e_main.c
+patching file drivers/net/ethernet/chelsio/cxgb/sge.c
+patching file drivers/net/ethernet/dec/tulip/tulip_core.c
+patching file drivers/net/ethernet/freescale/gianfar.c
+patching file drivers/net/ethernet/freescale/gianfar_ethtool.c
+patching file drivers/net/ethernet/freescale/gianfar_sysfs.c
+patching file drivers/net/ethernet/neterion/s2io.c
+patching file drivers/net/ethernet/oki-semi/pch_gbe/pch_gbe_main.c
+patching file drivers/net/ethernet/realtek/8139too.c
+patching file drivers/net/ethernet/tehuti/tehuti.c
+patching file drivers/net/rionet.c
+patching file drivers/net/wireless/orinoco/orinoco_usb.c
+patching file drivers/pci/access.c
+patching file drivers/scsi/fcoe/fcoe.c
+patching file drivers/scsi/fcoe/fcoe_ctlr.c
+patching file drivers/scsi/hpsa.c
+patching file drivers/scsi/libfc/fc_exch.c
+patching file drivers/scsi/libsas/sas_ata.c
+patching file drivers/scsi/qla2xxx/qla_inline.h
+patching file drivers/tty/serial/8250/8250_core.c
+patching file drivers/tty/serial/amba-pl011.c
+patching file drivers/tty/serial/omap-serial.c
+patching file drivers/tty/tty_buffer.c
+patching file drivers/tty/tty_ldisc.c
+Hunk #1 FAILED at 197.
+1 out of 1 hunk FAILED -- saving rejects to file drivers/tty/tty_ldisc.c.rej
+patching file drivers/usb/core/hcd.c
+patching file drivers/usb/gadget/f_fs.c
+patching file drivers/usb/gadget/inode.c
+patching file drivers/usb/host/ohci-hcd.c
+patching file fs/autofs4/autofs_i.h
+patching file fs/autofs4/expire.c
+patching file fs/btrfs/ctree.c
+patching file fs/btrfs/extent-tree.c
+patching file fs/buffer.c
+patching file fs/dcache.c
+patching file fs/eventpoll.c
+patching file fs/exec.c
+Hunk #1 succeeded at 914 (offset 78 lines).
+patching file fs/fscache/page.c
+patching file fs/jbd/checkpoint.c
+patching file fs/jbd2/checkpoint.c
+patching file fs/namespace.c
+Hunk #3 succeeded at 1311 (offset 6 lines).
+Hunk #4 succeeded at 1742 (offset 6 lines).
+patching file fs/ntfs/aops.c
+patching file fs/timerfd.c
+patching file include/acpi/platform/aclinux.h
+patching file include/asm-generic/bug.h
+patching file include/asm-generic/irq_work.h
+patching file include/linux/buffer_head.h
+patching file include/linux/completion.h
+patching file include/linux/cpu.h
+patching file include/linux/delay.h
+patching file include/linux/ftrace_event.h
+patching file include/linux/hardirq.h
+patching file include/linux/highmem.h
+patching file include/linux/hrtimer.h
+patching file include/linux/idr.h
+patching file include/linux/init_task.h
+Hunk #2 succeeded at 222 (offset 7 lines).
+patching file include/linux/interrupt.h
+Hunk #6 FAILED at 484.
+1 out of 11 hunks FAILED -- saving rejects to file include/linux/interrupt.h.rej
+patching file include/linux/irq.h
+patching file include/linux/irq_work.h
+patching file include/linux/irqdesc.h
+patching file include/linux/irqflags.h
+patching file include/linux/jbd_common.h
+patching file include/linux/jump_label.h
+patching file include/linux/kdb.h
+patching file include/linux/kernel.h
+patching file include/linux/kvm_host.h
+patching file include/linux/lglock.h
+patching file include/linux/list.h
+Hunk #1 succeeded at 388 (offset 15 lines).
+patching file include/linux/list_bl.h
+patching file include/linux/locallock.h
+patching file include/linux/mm.h
+Hunk #1 succeeded at 1270 (offset 13 lines).
+patching file include/linux/mm_types.h
+Hunk #3 FAILED at 451.
+1 out of 3 hunks FAILED -- saving rejects to file include/linux/mm_types.h.rej
+patching file include/linux/mutex.h
+patching file include/linux/mutex_rt.h
+patching file include/linux/netdevice.h
+Hunk #1 succeeded at 1140 (offset 1 line).
+Hunk #2 succeeded at 1602 (offset 1 line).
+Hunk #3 succeeded at 1815 (offset 1 line).
+patching file include/linux/netfilter/x_tables.h
+patching file include/linux/netpoll.h
+patching file include/linux/notifier.h
+Hunk #3 succeeded at 87 (offset 1 line).
+Hunk #4 succeeded at 100 (offset 1 line).
+Hunk #5 succeeded at 118 (offset 1 line).
+Hunk #6 succeeded at 199 (offset 1 line).
+patching file include/linux/page_cgroup.h
+patching file include/linux/percpu.h
+patching file include/linux/pid.h
+patching file include/linux/preempt.h
+Hunk #1 succeeded at 28 (offset 5 lines).
+Hunk #2 FAILED at 87.
+Hunk #3 succeeded at 165 (offset 19 lines).
+1 out of 3 hunks FAILED -- saving rejects to file include/linux/preempt.h.rej
+patching file include/linux/printk.h
+Hunk #1 succeeded at 101 with fuzz 1.
+Hunk #2 succeeded at 141 with fuzz 1 (offset 2 lines).
+patching file include/linux/radix-tree.h
+patching file include/linux/random.h
+patching file include/linux/rcupdate.h
+patching file include/linux/rcutree.h
+patching file include/linux/rtmutex.h
+patching file include/linux/rwlock_rt.h
+patching file include/linux/rwlock_types.h
+patching file include/linux/rwlock_types_rt.h
+patching file include/linux/rwsem.h
+patching file include/linux/rwsem_rt.h
+patching file include/linux/sched.h
+Hunk #3 succeeded at 1072 (offset 32 lines).
+Hunk #4 succeeded at 1112 (offset 32 lines).
+Hunk #5 succeeded at 1214 (offset 32 lines).
+Hunk #6 succeeded at 1231 with fuzz 2 (offset 32 lines).
+Hunk #7 succeeded at 1264 (offset 31 lines).
+Hunk #8 succeeded at 1309 (offset 31 lines).
+Hunk #9 succeeded at 1395 (offset 39 lines).
+Hunk #10 succeeded at 1465 (offset 39 lines).
+Hunk #11 FAILED at 1458.
+Hunk #12 succeeded at 1582 (offset 107 lines).
+Hunk #13 succeeded at 1724 (offset 107 lines).
+Hunk #14 succeeded at 1740 (offset 107 lines).
+Hunk #15 succeeded at 1779 (offset 107 lines).
+Hunk #16 succeeded at 1926 (offset 107 lines).
+Hunk #17 succeeded at 1942 (offset 107 lines).
+Hunk #18 succeeded at 2155 (offset 110 lines).
+Hunk #19 succeeded at 2270 (offset 110 lines).
+Hunk #20 succeeded at 2580 (offset 110 lines).
+Hunk #21 succeeded at 2657 (offset 110 lines).
+Hunk #22 succeeded at 2673 (offset 110 lines).
+Hunk #23 succeeded at 2684 (offset 110 lines).
+Hunk #24 succeeded at 2870 (offset 110 lines).
+1 out of 24 hunks FAILED -- saving rejects to file include/linux/sched.h.rej
+patching file include/linux/sched/rt.h
+patching file include/linux/seqlock.h
+patching file include/linux/signal.h
+patching file include/linux/skbuff.h
+patching file include/linux/smp.h
+Hunk #1 succeeded at 225 with fuzz 2 (offset 2 lines).
+patching file include/linux/spinlock.h
+patching file include/linux/spinlock_api_smp.h
+patching file include/linux/spinlock_rt.h
+patching file include/linux/spinlock_types.h
+patching file include/linux/spinlock_types_nort.h
+patching file include/linux/spinlock_types_raw.h
+patching file include/linux/spinlock_types_rt.h
+patching file include/linux/srcu.h
+patching file include/linux/sysctl.h
+patching file include/linux/timer.h
+patching file include/linux/uaccess.h
+Hunk #2 FAILED at 76.
+1 out of 2 hunks FAILED -- saving rejects to file include/linux/uaccess.h.rej
+patching file include/linux/uprobes.h
+patching file include/linux/vmstat.h
+patching file include/linux/wait-simple.h
+patching file include/linux/work-simple.h
+patching file include/net/dst.h
+patching file include/net/neighbour.h
+patching file include/net/netns/ipv4.h
+patching file include/trace/events/hist.h
+patching file include/trace/events/latency_hist.h
+patching file init/Kconfig
+Hunk #4 succeeded at 1544 (offset 1 line).
+Hunk #5 succeeded at 1563 (offset 1 line).
+patching file init/Makefile
+Hunk #1 succeeded at 36 (offset 3 lines).
+patching file init/main.c
+Hunk #2 succeeded at 576 (offset 70 lines).
+patching file ipc/mqueue.c
+Hunk #1 succeeded at 924 (offset 1 line).
+Hunk #2 succeeded at 948 (offset 1 line).
+patching file ipc/msg.c
+Hunk #2 succeeded at 645 (offset 1 line).
+Hunk #3 succeeded at 664 (offset 1 line).
+patching file ipc/sem.c
+Hunk #1 succeeded at 608 (offset 1 line).
+Hunk #2 succeeded at 635 (offset 1 line).
+Hunk #3 succeeded at 667 (offset 1 line).
+Hunk #4 succeeded at 685 (offset 1 line).
+Hunk #5 succeeded at 699 (offset 1 line).
+Hunk #6 succeeded at 712 (offset 1 line).
+Hunk #7 succeeded at 1172 (offset 1 line).
+Hunk #8 succeeded at 1886 (offset 1 line).
+Hunk #9 succeeded at 2021 (offset 1 line).
+patching file kernel/Kconfig.locks
+patching file kernel/Kconfig.preempt
+patching file kernel/Makefile
+patching file kernel/cpu.c
+patching file kernel/debug/kdb/kdb_io.c
+patching file kernel/events/core.c
+Hunk #1 succeeded at 5885 (offset 7 lines).
+patching file kernel/exit.c
+patching file kernel/fork.c
+Hunk #4 succeeded at 661 (offset 43 lines).
+Hunk #5 succeeded at 1195 (offset 50 lines).
+Hunk #6 succeeded at 1320 (offset 53 lines).
+Hunk #7 succeeded at 1328 (offset 53 lines).
+Hunk #8 succeeded at 1382 (offset 53 lines).
+Hunk #9 succeeded at 1770 (offset 62 lines).
+patching file kernel/futex.c
+Hunk #1 succeeded at 579 (offset 6 lines).
+Hunk #2 succeeded at 649 (offset 6 lines).
+Hunk #3 succeeded at 774 (offset 6 lines).
+Hunk #4 succeeded at 794 (offset 6 lines).
+Hunk #5 succeeded at 847 (offset 6 lines).
+Hunk #6 succeeded at 1025 (offset 6 lines).
+Hunk #7 succeeded at 1479 (offset 6 lines).
+Hunk #8 succeeded at 1543 (offset 6 lines).
+Hunk #9 succeeded at 2138 (offset 6 lines).
+Hunk #10 succeeded at 2161 (offset 6 lines).
+Hunk #11 succeeded at 2225 (offset 6 lines).
+Hunk #12 succeeded at 2241 (offset 6 lines).
+Hunk #13 succeeded at 2391 (offset 6 lines).
+Hunk #14 succeeded at 2416 (offset 6 lines).
+Hunk #15 succeeded at 2446 (offset 6 lines).
+Hunk #16 succeeded at 2503 (offset 6 lines).
+Hunk #17 succeeded at 2516 (offset 6 lines).
+patching file kernel/hrtimer.c
+Hunk #21 FAILED at 1700.
+1 out of 31 hunks FAILED -- saving rejects to file kernel/hrtimer.c.rej
+patching file kernel/irq/handle.c
+patching file kernel/irq/manage.c
+patching file kernel/irq/settings.h
+patching file kernel/irq/spurious.c
+patching file kernel/irq_work.c
+patching file kernel/itimer.c
+patching file kernel/ksysfs.c
+Hunk #1 succeeded at 134 (offset 2 lines).
+Hunk #2 succeeded at 208 (offset 2 lines).
+patching file kernel/lglock.c
+patching file kernel/lockdep.c
+Hunk #1 succeeded at 3546 (offset 5 lines).
+Hunk #2 succeeded at 3561 (offset 5 lines).
+patching file kernel/panic.c
+patching file kernel/posix-cpu-timers.c
+patching file kernel/posix-timers.c
+Hunk #1 succeeded at 498 (offset 1 line).
+Hunk #2 succeeded at 507 (offset 1 line).
+Hunk #3 succeeded at 820 (offset 1 line).
+Hunk #4 succeeded at 911 (offset 1 line).
+Hunk #5 succeeded at 920 (offset 1 line).
+Hunk #6 succeeded at 963 (offset 1 line).
+Hunk #7 succeeded at 997 (offset 1 line).
+patching file kernel/power/hibernate.c
+patching file kernel/power/suspend.c
+patching file kernel/printk.c
+Hunk #1 succeeded at 1039 (offset 5 lines).
+Hunk #2 succeeded at 1051 (offset 5 lines).
+Hunk #3 succeeded at 1079 (offset 5 lines).
+Hunk #4 succeeded at 1100 (offset 5 lines).
+Hunk #5 succeeded at 1149 (offset 5 lines).
+Hunk #6 succeeded at 1307 (offset 5 lines).
+Hunk #7 succeeded at 1320 (offset 5 lines).
+Hunk #8 succeeded at 1380 (offset 5 lines).
+Hunk #9 succeeded at 1531 (offset 5 lines).
+Hunk #10 succeeded at 1600 (offset 5 lines).
+Hunk #11 succeeded at 1726 (offset 5 lines).
+Hunk #12 succeeded at 1836 (offset 5 lines).
+Hunk #13 succeeded at 2088 (offset 5 lines).
+Hunk #14 succeeded at 2180 (offset 5 lines).
+patching file kernel/rcupdate.c
+patching file kernel/rcutiny.c
+patching file kernel/rcutiny_plugin.h
+patching file kernel/rcutree.c
+Hunk #13 FAILED at 2313.
+1 out of 23 hunks FAILED -- saving rejects to file kernel/rcutree.c.rej
+patching file kernel/rcutree.h
+patching file kernel/rcutree_plugin.h
+Hunk #8 FAILED at 1361.
+1 out of 20 hunks FAILED -- saving rejects to file kernel/rcutree_plugin.h.rej
+patching file kernel/relay.c
+patching file kernel/res_counter.c
+patching file kernel/rt.c
+patching file kernel/rtmutex-debug.c
+patching file kernel/rtmutex-debug.h
+patching file kernel/rtmutex-tester.c
+Hunk #2 FAILED at 107.
+1 out of 2 hunks FAILED -- saving rejects to file kernel/rtmutex-tester.c.rej
+patching file kernel/rtmutex.c
+patching file kernel/rtmutex.h
+patching file kernel/rtmutex_common.h
+patching file kernel/sched/Makefile
+patching file kernel/sched/core.c
+Hunk #30 succeeded at 4058 (offset 3 lines).
+Hunk #31 succeeded at 4098 (offset 3 lines).
+Hunk #32 succeeded at 4195 (offset 4 lines).
+Hunk #33 succeeded at 4227 (offset 4 lines).
+Hunk #34 succeeded at 4253 (offset 4 lines).
+Hunk #35 succeeded at 4620 (offset 4 lines).
+Hunk #36 succeeded at 4671 (offset 4 lines).
+Hunk #37 succeeded at 4685 (offset 4 lines).
+Hunk #38 succeeded at 5030 (offset 4 lines).
+Hunk #39 succeeded at 5038 (offset 4 lines).
+Hunk #40 succeeded at 5055 (offset 4 lines).
+Hunk #41 succeeded at 5184 (offset 4 lines).
+Hunk #42 succeeded at 5273 (offset 4 lines).
+Hunk #43 succeeded at 5287 (offset 4 lines).
+Hunk #44 succeeded at 5618 (offset 13 lines).
+Hunk #45 succeeded at 7474 (offset 13 lines).
+Hunk #46 succeeded at 7485 (offset 13 lines).
+Hunk #47 succeeded at 7504 (offset 13 lines).
+patching file kernel/sched/cputime.c
+patching file kernel/sched/debug.c
+patching file kernel/sched/fair.c
+patching file kernel/sched/features.h
+patching file kernel/sched/rt.c
+patching file kernel/sched/sched.h
+patching file kernel/sched/work-simple.c
+patching file kernel/signal.c
+Hunk #3 succeeded at 408 (offset 3 lines).
+Hunk #4 succeeded at 428 (offset 3 lines).
+Hunk #5 succeeded at 444 (offset 3 lines).
+Hunk #6 succeeded at 472 (offset 3 lines).
+Hunk #7 succeeded at 638 (offset 3 lines).
+Hunk #8 succeeded at 684 (offset 3 lines).
+Hunk #9 succeeded at 1315 (offset 10 lines).
+Hunk #10 succeeded at 1351 (offset 20 lines).
+Hunk #11 succeeded at 1414 (offset 20 lines).
+Hunk #12 succeeded at 1430 (offset 20 lines).
+Hunk #13 succeeded at 1678 (offset 23 lines).
+Hunk #14 succeeded at 2040 (offset 23 lines).
+Hunk #15 succeeded at 2499 (offset 23 lines).
+Hunk #16 succeeded at 3266 (offset 31 lines).
+Hunk #17 succeeded at 3430 (offset 51 lines).
+Hunk #18 succeeded at 3555 (offset 51 lines).
+Hunk #19 succeeded at 3731 (offset 51 lines).
+patching file kernel/softirq.c
+Hunk #5 FAILED at 414.
+Hunk #12 FAILED at 836.
+Hunk #15 FAILED at 916.
+Hunk #19 succeeded at 1170 with fuzz 2.
+3 out of 19 hunks FAILED -- saving rejects to file kernel/softirq.c.rej
+patching file kernel/spinlock.c
+patching file kernel/stop_machine.c
+patching file kernel/time/jiffies.c
+patching file kernel/time/ntp.c
+patching file kernel/time/tick-common.c
+patching file kernel/time/tick-internal.h
+patching file kernel/time/tick-sched.c
+patching file kernel/time/timekeeping.c
+Hunk #1 succeeded at 1732 (offset 3 lines).
+patching file kernel/timer.c
+patching file kernel/trace/Kconfig
+patching file kernel/trace/Makefile
+patching file kernel/trace/latency_hist.c
+patching file kernel/trace/trace.c
+patching file kernel/trace/trace.h
+patching file kernel/trace/trace_events.c
+patching file kernel/trace/trace_irqsoff.c
+patching file kernel/trace/trace_output.c
+patching file kernel/user.c
+patching file kernel/wait-simple.c
+patching file kernel/watchdog.c
+patching file kernel/workqueue.c
+patching file kernel/workqueue_internal.h
+patching file lib/Kconfig
+patching file lib/Kconfig.debug
+patching file lib/Makefile
+patching file lib/debugobjects.c
+patching file lib/idr.c
+patching file lib/locking-selftest.c
+patching file lib/percpu-rwsem.c
+patching file lib/radix-tree.c
+patching file lib/scatterlist.c
+patching file lib/smp_processor_id.c
+patching file lib/spinlock_debug.c
+patching file localversion-rt
+patching file mm/Kconfig
+patching file mm/bounce.c
+patching file mm/filemap.c
+Hunk #1 succeeded at 1974 with fuzz 1.
+patching file mm/highmem.c
+patching file mm/memcontrol.c
+patching file mm/memory.c
+Hunk #1 succeeded at 3961 (offset 209 lines).
+Hunk #2 succeeded at 4637 (offset 282 lines).
+patching file mm/mmu_context.c
+patching file mm/page_alloc.c
+Hunk #1 FAILED at 60.
+Hunk #2 succeeded at 222 (offset 1 line).
+Hunk #3 succeeded at 636 (offset 1 line).
+Hunk #4 succeeded at 647 (offset 1 line).
+Hunk #5 succeeded at 706 (offset 1 line).
+Hunk #6 succeeded at 714 (offset 1 line).
+Hunk #7 succeeded at 780 with fuzz 1 (offset 11 lines).
+Hunk #8 succeeded at 1255 (offset 39 lines).
+Hunk #9 succeeded at 1287 (offset 39 lines).
+Hunk #10 succeeded at 1354 (offset 39 lines).
+Hunk #11 succeeded at 1414 (offset 39 lines).
+Hunk #12 succeeded at 1439 (offset 39 lines).
+Hunk #13 succeeded at 1581 (offset 39 lines).
+Hunk #14 succeeded at 1613 (offset 39 lines).
+Hunk #15 succeeded at 1634 (offset 39 lines).
+Hunk #16 succeeded at 2288 (offset 39 lines).
+Hunk #17 succeeded at 5339 (offset 39 lines).
+Hunk #18 succeeded at 5578 (offset 39 lines).
+Hunk #19 succeeded at 6158 (offset 39 lines).
+Hunk #20 succeeded at 6192 (offset 39 lines).
+Hunk #21 succeeded at 6201 (offset 39 lines).
+1 out of 21 hunks FAILED -- saving rejects to file mm/page_alloc.c.rej
+patching file mm/page_cgroup.c
+patching file mm/slab.c
+Hunk #2 succeeded at 638 (offset 4 lines).
+Hunk #3 succeeded at 1144 (offset 4 lines).
+Hunk #4 succeeded at 1162 (offset 4 lines).
+Hunk #5 succeeded at 1243 (offset 4 lines).
+Hunk #6 succeeded at 1272 (offset 4 lines).
+Hunk #7 succeeded at 1280 (offset 4 lines).
+Hunk #8 succeeded at 1294 (offset 4 lines).
+Hunk #9 succeeded at 1368 (offset 4 lines).
+Hunk #10 succeeded at 1383 (offset 4 lines).
+Hunk #11 succeeded at 1584 (offset 4 lines).
+Hunk #12 succeeded at 1865 (offset 4 lines).
+Hunk #13 succeeded at 1891 (offset 4 lines).
+Hunk #14 succeeded at 1904 (offset 4 lines).
+Hunk #15 succeeded at 2121 (offset 4 lines).
+Hunk #16 succeeded at 2135 (offset 4 lines).
+Hunk #17 succeeded at 2492 (offset 4 lines).
+Hunk #18 succeeded at 2527 (offset 4 lines).
+Hunk #19 succeeded at 2594 (offset 4 lines).
+Hunk #20 succeeded at 2611 (offset 4 lines).
+Hunk #21 succeeded at 2886 (offset 4 lines).
+Hunk #22 succeeded at 2916 (offset 4 lines).
+Hunk #23 succeeded at 2927 (offset 4 lines).
+Hunk #24 succeeded at 3344 (offset 4 lines).
+Hunk #25 succeeded at 3469 (offset 4 lines).
+Hunk #26 succeeded at 3494 (offset 4 lines).
+Hunk #27 succeeded at 3556 (offset 4 lines).
+Hunk #28 succeeded at 3609 (offset 4 lines).
+Hunk #29 succeeded at 3887 (offset 19 lines).
+Hunk #30 FAILED at 3897.
+Hunk #31 succeeded at 3961 (offset 20 lines).
+Hunk #32 succeeded at 3974 (offset 20 lines).
+Hunk #33 succeeded at 4022 (offset 20 lines).
+Hunk #34 succeeded at 4069 (offset 20 lines).
+Hunk #35 succeeded at 4080 (offset 20 lines).
+Hunk #36 succeeded at 4199 (offset 20 lines).
+Hunk #37 succeeded at 4209 (offset 20 lines).
+Hunk #38 succeeded at 4302 (offset 20 lines).
+Hunk #39 succeeded at 4327 (offset 20 lines).
+Hunk #40 succeeded at 4535 (offset 28 lines).
+1 out of 40 hunks FAILED -- saving rejects to file mm/slab.c.rej
+patching file mm/slab.h
+Hunk #1 succeeded at 260 (offset 13 lines).
+patching file mm/slub.c
+Hunk #28 succeeded at 2839 (offset 8 lines).
+Hunk #29 succeeded at 3518 (offset 65 lines).
+Hunk #30 succeeded at 3539 (offset 65 lines).
+Hunk #31 succeeded at 3715 (offset 65 lines).
+Hunk #32 succeeded at 4025 (offset 65 lines).
+Hunk #33 succeeded at 4048 (offset 65 lines).
+Hunk #34 succeeded at 4238 (offset 65 lines).
+patching file mm/swap.c
+Hunk #3 succeeded at 411 (offset 2 lines).
+Hunk #4 succeeded at 460 (offset 2 lines).
+Hunk #5 succeeded at 514 (offset 2 lines).
+Hunk #6 succeeded at 655 (offset 2 lines).
+Hunk #7 succeeded at 685 (offset 2 lines).
+patching file mm/vmalloc.c
+Hunk #1 succeeded at 828 (offset 36 lines).
+Hunk #2 succeeded at 867 (offset 36 lines).
+Hunk #3 succeeded at 947 (offset 36 lines).
+Hunk #4 succeeded at 963 (offset 36 lines).
+Hunk #5 succeeded at 1001 (offset 36 lines).
+patching file mm/vmstat.c
+patching file net/core/dev.c
+Hunk #9 succeeded at 3151 with fuzz 2.
+Hunk #12 FAILED at 3215.
+1 out of 21 hunks FAILED -- saving rejects to file net/core/dev.c.rej
+patching file net/core/skbuff.c
+patching file net/core/sock.c
+patching file net/ipv4/icmp.c
+patching file net/ipv4/sysctl_net_ipv4.c
+Hunk #1 succeeded at 806 (offset 2 lines).
+patching file net/mac80211/rx.c
+patching file net/netfilter/core.c
+patching file net/packet/af_packet.c
+patching file net/rds/ib_rdma.c
+patching file net/sched/sch_generic.c
+patching file net/sunrpc/svc_xprt.c
+patching file scripts/mkcompile_h
+patching file virt/kvm/async_pf.c
+patching file virt/kvm/kvm_main.c
+Hunk #1 succeeded at 238 (offset 5 lines).
+Hunk #2 succeeded at 1677 (offset 5 lines).
+Hunk #3 succeeded at 1694 (offset 5 lines).
+Hunk #4 succeeded at 1705 (offset 5 lines).
+Hunk #5 succeeded at 1821 (offset 5 lines).
