@@ -1,0 +1,1145 @@
+PATCH: 0001-rt-sched-numa-Move-task_numa_free-to-__put_task_stru.patch
+	FILE: kernel/fork.c
+	FILE: kernel/sched/core.c
+PATCH: 0002-sched-Init-idle-on_rq-in-init_idle.patch
+	FILE: kernel/sched/core.c
+PATCH: 0003-sched-Check-for-idle-task-in-might_sleep.patch
+	FILE: kernel/sched/core.c
+PATCH: 0004-sched-Add-better-debug-output-for-might_sleep.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/sched/core.c
+PATCH: 0005-sched-Adjust-p-sched_reset_on_fork-when-nothing-else.patch
+	FILE: kernel/sched/core.c
+PATCH: 0006-sched-Queue-RT-tasks-to-head-when-prio-drops.patch
+	FILE: kernel/sched/core.c
+PATCH: 0007-sched-Consider-pi-boosting-in-setscheduler.patch
+	FILE: include/linux/sched/rt.h
+	FILE: kernel/locking/rtmutex.c
+	FILE: kernel/sched/core.c
+PATCH: 0008-sched-Fix-broken-setscheduler.patch
+	FILE: kernel/sched/core.c
+PATCH: 0009-early-printk-consolidate.patch.patch
+	FILE: arch/sparc/kernel/setup_32.c
+	FILE: arch/sparc/kernel/setup_64.c
+PATCH: 0010-sparc-provide-EARLY_PRINTK-for-SPARC.patch
+	FILE: arch/sparc/Kconfig
+PATCH: 0011-sparc64-use-generic-rwsem-spinlocks-rt.patch
+	FILE: arch/sparc/Kconfig
+PATCH: 0012-kernel-SRCU-provide-a-static-initializer.patch
+	FILE: include/linux/notifier.h
+	FILE: include/linux/srcu.h
+PATCH: 0013-block-Shorten-interrupt-disabled-regions.patch
+	FILE: block/blk-core.c
+PATCH: 0014-timekeeping-split-jiffies-lock.patch.patch
+	FILE: kernel/time/jiffies.c
+	FILE: kernel/time/tick-common.c
+	FILE: kernel/time/tick-internal.h
+	FILE: kernel/time/tick-sched.c
+	FILE: kernel/time/timekeeping.c
+PATCH: 0015-vtime-split-lock-and-seqcount.patch.patch
+	FILE: include/linux/init_task.h
+	FILE: include/linux/sched.h
+	FILE: kernel/fork.c
+	FILE: kernel/sched/cputime.c
+PATCH: 0016-mips-enable-interrupts-in-signal.patch.patch
+	FILE: arch/mips/kernel/signal.c
+PATCH: 0017-tracing-Account-for-preempt-off-in-preempt_schedule.patch
+	FILE: kernel/sched/core.c
+PATCH: 0018-signal-revert-ptrace-preempt-magic.patch.patch
+	FILE: kernel/signal.c
+PATCH: 0019-ptrace-fix-ptrace-vs-tasklist_lock-race.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/ptrace.c
+	FILE: kernel/sched/core.c
+PATCH: 0020-preempt-rt-Convert-arm-boot_lock-to-raw.patch
+	FILE: arch/arm/mach-exynos/platsmp.c
+	FILE: arch/arm/mach-msm/platsmp.c
+	FILE: arch/arm/mach-omap2/omap-smp.c
+	FILE: arch/arm/mach-prima2/platsmp.c
+	FILE: arch/arm/mach-spear/platsmp.c
+	FILE: arch/arm/mach-sti/platsmp.c
+	FILE: arch/arm/mach-ux500/platsmp.c
+	FILE: arch/arm/plat-versatile/platsmp.c
+PATCH: 0021-posix-timers-Prevent-broadcast-signals.patch
+	FILE: kernel/posix-timers.c
+PATCH: 0022-signals-Allow-rt-tasks-to-cache-one-sigqueue-struct.patch
+	FILE: include/linux/sched.h
+	FILE: include/linux/signal.h
+	FILE: kernel/exit.c
+	FILE: kernel/fork.c
+	FILE: kernel/signal.c
+PATCH: 0023-signal-x86-Delay-calling-signals-in-atomic.patch
+	FILE: arch/x86/include/asm/signal.h
+	FILE: arch/x86/kernel/signal.c
+	FILE: include/linux/sched.h
+	FILE: kernel/signal.c
+PATCH: 0024-drivers-random-Reduce-preempt-disabled-region.patch
+	FILE: drivers/char/random.c
+PATCH: 0025-ARM-AT91-PIT-Remove-irq-handler-when-clock-event-is-.patch
+	FILE: arch/arm/mach-at91/at91rm9200_time.c
+	FILE: arch/arm/mach-at91/at91sam926x_time.c
+PATCH: 0026-clocksource-TCLIB-Allow-higher-clock-rates-for-clock.patch
+	FILE: drivers/clocksource/tcb_clksrc.c
+	FILE: drivers/misc/Kconfig
+PATCH: 0027-drivers-net-Use-disable_irq_nosync-in-8139too.patch
+	FILE: drivers/net/ethernet/realtek/8139too.c
+PATCH: 0028-mm-Prepare-decoupling-the-page-fault-disabling-logic.patch
+	FILE: include/linux/sched.h
+	FILE: include/linux/uaccess.h
+	FILE: kernel/fork.c
+	FILE: mm/memory.c
+PATCH: 0029-mm-Fixup-all-fault-handlers-to-check-current-pagefau.patch
+	FILE: arch/alpha/mm/fault.c
+	FILE: arch/arm/mm/fault.c
+	FILE: arch/avr32/mm/fault.c
+	FILE: arch/cris/mm/fault.c
+	FILE: arch/frv/mm/fault.c
+	FILE: arch/ia64/mm/fault.c
+	FILE: arch/m32r/mm/fault.c
+	FILE: arch/m68k/mm/fault.c
+	FILE: arch/microblaze/mm/fault.c
+	FILE: arch/mips/mm/fault.c
+	FILE: arch/mn10300/mm/fault.c
+	FILE: arch/parisc/mm/fault.c
+	FILE: arch/powerpc/mm/fault.c
+	FILE: arch/s390/mm/fault.c
+	FILE: arch/score/mm/fault.c
+	FILE: arch/sh/mm/fault.c
+	FILE: arch/sparc/mm/fault_32.c
+	FILE: arch/sparc/mm/fault_64.c
+	FILE: arch/tile/mm/fault.c
+	FILE: arch/um/kernel/trap.c
+	FILE: arch/x86/mm/fault.c
+	FILE: arch/xtensa/mm/fault.c
+PATCH: 0030-mm-pagefault_disabled.patch
+	FILE: arch/alpha/mm/fault.c
+	FILE: arch/arm/mm/fault.c
+	FILE: arch/avr32/mm/fault.c
+	FILE: arch/cris/mm/fault.c
+	FILE: arch/frv/mm/fault.c
+	FILE: arch/ia64/mm/fault.c
+	FILE: arch/m32r/mm/fault.c
+	FILE: arch/m68k/mm/fault.c
+	FILE: arch/microblaze/mm/fault.c
+	FILE: arch/mips/mm/fault.c
+	FILE: arch/mn10300/mm/fault.c
+	FILE: arch/parisc/mm/fault.c
+	FILE: arch/powerpc/mm/fault.c
+	FILE: arch/s390/mm/fault.c
+	FILE: arch/score/mm/fault.c
+	FILE: arch/sh/mm/fault.c
+	FILE: arch/sparc/mm/fault_32.c
+	FILE: arch/sparc/mm/fault_64.c
+	FILE: arch/tile/mm/fault.c
+	FILE: arch/um/kernel/trap.c
+	FILE: arch/x86/mm/fault.c
+	FILE: arch/xtensa/mm/fault.c
+	FILE: include/linux/sched.h
+	FILE: kernel/fork.c
+PATCH: 0031-mm-raw_pagefault_disable.patch
+	FILE: include/linux/uaccess.h
+	FILE: mm/memory.c
+PATCH: 0032-mm-Remove-preempt-count-from-pagefault-disable-enabl.patch
+	FILE: mm/memory.c
+PATCH: 0033-suspend-Prevent-might-sleep-splats.patch
+	FILE: include/linux/kernel.h
+	FILE: kernel/power/hibernate.c
+	FILE: kernel/power/suspend.c
+PATCH: 0034-mm-page-alloc-use-list-last-entry.patch.patch
+	FILE: mm/page_alloc.c
+PATCH: 0035-rwsem-inlcude-fix.patch.patch
+	FILE: include/linux/pid.h
+PATCH: 0036-sysctl-include-fix.patch.patch
+	FILE: include/linux/sysctl.h
+PATCH: 0037-net-flip-lock-dep-thingy.patch.patch
+	FILE: net/core/sock.c
+PATCH: 0038-net-sched-dev_deactivate_many-use-msleep-1-instead-o.patch
+	FILE: net/sched/sch_generic.c
+PATCH: 0039-softirq-thread-do-softirq.patch.patch
+	FILE: include/linux/interrupt.h
+	FILE: net/core/dev.c
+PATCH: 0040-softirq-split-out-code.patch.patch
+	FILE: kernel/softirq.c
+PATCH: 0041-x86-Do-not-unmask-io_apic-when-interrupt-is-in-progr.patch
+	FILE: arch/x86/kernel/apic/io_apic.c
+PATCH: 0042-x86-Do-not-disable-preemption-in-int3-on-32bit.patch
+	FILE: arch/x86/kernel/traps.c
+PATCH: 0043-pci-Use-__wake_up_all_locked-pci_unblock_user_cfg_ac.patch
+	FILE: drivers/pci/access.c
+PATCH: 0044-latency-hist.patch.patch
+	FILE: Documentation/trace/histograms.txt
+	FILE: include/linux/hrtimer.h
+	FILE: include/linux/sched.h
+	FILE: include/trace/events/hist.h
+	FILE: include/trace/events/latency_hist.h
+	FILE: kernel/hrtimer.c
+	FILE: kernel/trace/Kconfig
+	FILE: kernel/trace/Makefile
+	FILE: kernel/trace/latency_hist.c
+	FILE: kernel/trace/trace_irqsoff.c
+PATCH: 0045-hwlatdetect.patch.patch
+	FILE: Documentation/hwlat_detector.txt
+	FILE: drivers/misc/Kconfig
+	FILE: drivers/misc/Makefile
+	FILE: drivers/misc/hwlat_detector.c
+PATCH: 0046-hwlat-detector-Update-hwlat_detector-to-add-outer-lo.patch
+	FILE: drivers/misc/hwlat_detector.c
+PATCH: 0047-hwlat-detector-Use-trace_clock_local-if-available.patch
+	FILE: drivers/misc/hwlat_detector.c
+PATCH: 0048-hwlat-detector-Use-thread-instead-of-stop-machine.patch
+	FILE: drivers/misc/hwlat_detector.c
+PATCH: 0049-hwlat-detector-Don-t-ignore-threshold-module-paramet.patch
+	FILE: drivers/misc/hwlat_detector.c
+PATCH: 0050-printk-kill.patch.patch
+	FILE: include/linux/printk.h
+	FILE: kernel/printk/printk.c
+	FILE: kernel/watchdog.c
+PATCH: 0051-printk-force_early_printk-boot-param-to-help-with-de.patch
+	FILE: kernel/printk/printk.c
+PATCH: 0052-rt-preempt-base-config.patch.patch
+	FILE: kernel/Kconfig.preempt
+PATCH: 0053-kconfig-disable-a-few-options-rt.patch.patch
+	FILE: arch/Kconfig
+	FILE: mm/Kconfig
+PATCH: 0054-kconfig-preempt-rt-full.patch.patch
+	FILE: init/Makefile
+	FILE: kernel/Kconfig.preempt
+	FILE: scripts/mkcompile_h
+PATCH: 0055-bug-BUG_ON-WARN_ON-variants-dependend-on-RT-RT.patch
+	FILE: include/asm-generic/bug.h
+PATCH: 0056-rt-local_irq_-variants-depending-on-RT-RT.patch
+	FILE: include/linux/interrupt.h
+	FILE: include/linux/irqflags.h
+PATCH: 0057-preempt-Provide-preempt_-_-no-rt-variants.patch
+	FILE: include/linux/preempt.h
+PATCH: 0058-ata-Do-not-disable-interrupts-in-ide-code-for-preemp.patch
+	FILE: drivers/ata/libata-sff.c
+PATCH: 0059-ide-Do-not-disable-interrupts-for-PREEMPT-RT.patch
+	FILE: drivers/ide/alim15x3.c
+	FILE: drivers/ide/hpt366.c
+	FILE: drivers/ide/ide-io-std.c
+	FILE: drivers/ide/ide-io.c
+	FILE: drivers/ide/ide-iops.c
+	FILE: drivers/ide/ide-probe.c
+	FILE: drivers/ide/ide-taskfile.c
+PATCH: 0060-infiniband-Mellanox-IB-driver-patch-use-_nort-primit.patch
+	FILE: drivers/infiniband/ulp/ipoib/ipoib_multicast.c
+PATCH: 0061-input-gameport-Do-not-disable-interrupts-on-PREEMPT_.patch
+	FILE: drivers/input/gameport/gameport.c
+PATCH: 0062-core-Do-not-disable-interrupts-on-RT-in-kernel-users.patch
+	FILE: kernel/user.c
+PATCH: 0063-core-Do-not-disable-interrupts-on-RT-in-res_counter..patch
+	FILE: kernel/res_counter.c
+PATCH: 0064-usb-use-_nort-in-giveback.patch
+	FILE: drivers/usb/core/hcd.c
+		Hunk #1 succeeded at 1681 (offset 3 lines).
+PATCH: 0065-mm-scatterlist-dont-disable-irqs-on-RT.patch
+	FILE: lib/scatterlist.c
+PATCH: 0066-signal-fix-up-rcu-wreckage.patch.patch
+	FILE: kernel/signal.c
+PATCH: 0067-net-wireless-warn-nort.patch.patch
+	FILE: net/mac80211/rx.c
+PATCH: 0068-mm-Replace-cgroup_page-bit-spinlock.patch
+	FILE: include/linux/page_cgroup.h
+	FILE: mm/page_cgroup.c
+PATCH: 0069-buffer_head-Replace-bh_uptodate_lock-for-rt.patch
+	FILE: fs/buffer.c
+	FILE: fs/ntfs/aops.c
+	FILE: include/linux/buffer_head.h
+PATCH: 0070-fs-jbd-jbd2-Make-state-lock-and-journal-head-lock-rt.patch
+	FILE: include/linux/buffer_head.h
+	FILE: include/linux/jbd_common.h
+PATCH: 0071-list_bl.h-make-list-head-locking-RT-safe.patch
+	FILE: include/linux/list_bl.h
+PATCH: 0072-genirq-Disable-DEBUG_SHIRQ-for-rt.patch
+	FILE: lib/Kconfig.debug
+PATCH: 0073-genirq-disable-irqpoll-on-rt.patch
+	FILE: kernel/irq/spurious.c
+PATCH: 0074-genirq-force-threading.patch.patch
+	FILE: include/linux/interrupt.h
+	FILE: kernel/irq/manage.c
+PATCH: 0075-genirq-do-not-invoke-the-affinity-callback-via-a-wor.patch
+	FILE: include/linux/interrupt.h
+	FILE: kernel/irq/manage.c
+PATCH: 0076-drivers-net-fix-livelock-issues.patch
+	FILE: drivers/net/ethernet/atheros/atl1c/atl1c_main.c
+	FILE: drivers/net/ethernet/atheros/atl1e/atl1e_main.c
+	FILE: drivers/net/ethernet/chelsio/cxgb/sge.c
+	FILE: drivers/net/ethernet/neterion/s2io.c
+	FILE: drivers/net/ethernet/oki-semi/pch_gbe/pch_gbe_main.c
+	FILE: drivers/net/ethernet/tehuti/tehuti.c
+	FILE: drivers/net/rionet.c
+PATCH: 0077-drivers-net-vortex-fix-locking-issues.patch
+	FILE: drivers/net/ethernet/3com/3c59x.c
+PATCH: 0078-drivers-net-gianfar-Make-RT-aware.patch
+	FILE: drivers/net/ethernet/freescale/gianfar.c
+PATCH: 0079-net-gianfar-do-not-disable-interrupts.patch
+	FILE: drivers/net/ethernet/freescale/gianfar.c
+	FILE: drivers/net/ethernet/freescale/gianfar_ethtool.c
+	FILE: drivers/net/ethernet/freescale/gianfar_sysfs.c
+PATCH: 0080-net-gianfar-do-not-try-to-cleanup-TX-packets-if-they.patch
+	FILE: drivers/net/ethernet/freescale/gianfar.c
+PATCH: 0081-USB-Fix-the-mouse-problem-when-copying-large-amounts.patch
+	FILE: drivers/usb/host/ohci-hcd.c
+PATCH: 0082-local-var.patch.patch
+	FILE: include/linux/percpu.h
+PATCH: 0083-rt-local-irq-lock.patch.patch
+	FILE: include/linux/locallock.h
+PATCH: 0084-use-local-spin_locks-in-local_lock.patch
+	FILE: include/linux/locallock.h
+PATCH: 0085-cpu-rt-variants.patch.patch
+	FILE: include/linux/smp.h
+PATCH: 0086-mm-page_alloc-rt-friendly-per-cpu-pages.patch
+	FILE: mm/page_alloc.c
+PATCH: 0087-mm-page_alloc-reduce-lock-sections-further.patch
+	FILE: mm/page_alloc.c
+PATCH: 0088-mm-page-alloc-fix.patch.patch
+	FILE: mm/page_alloc.c
+PATCH: 0089-mm-convert-swap-to-percpu-locked.patch
+	FILE: mm/swap.c
+PATCH: 0090-mm-make-vmstat-rt-aware.patch
+	FILE: include/linux/vmstat.h
+	FILE: mm/vmstat.c
+PATCH: 0091-ARM-Initialize-ptl-lock-for-vector-page.patch
+	FILE: arch/arm/kernel/process.c
+PATCH: 0092-mm-bounce-Use-local_irq_save_nort.patch
+	FILE: mm/bounce.c
+PATCH: 0093-mm-Allow-only-slub-on-RT.patch
+	FILE: init/Kconfig
+PATCH: 0094-mm-Enable-SLUB-for-RT.patch
+	FILE: mm/slab.h
+	FILE: mm/slub.c
+PATCH: 0095-slub-Enable-irqs-for-__GFP_WAIT.patch
+	FILE: mm/slub.c
+PATCH: 0096-slub-delay-ctor-until-the-object-is-requested.patch
+	FILE: mm/slub.c
+PATCH: 0097-mm-page_alloc-Use-local_lock_on-instead-of-plain-spi.patch
+	FILE: mm/page_alloc.c
+PATCH: 0098-mm-memcontrol-Don-t-call-schedule_work_on-in-preempt.patch
+	FILE: mm/memcontrol.c
+PATCH: 0099-radix-tree-rt-aware.patch.patch
+	FILE: include/linux/radix-tree.h
+	FILE: lib/radix-tree.c
+PATCH: 0100-panic-skip-get_random_bytes-for-RT_FULL-in-init_oops.patch
+	FILE: kernel/panic.c
+PATCH: 0101-ipc-Make-the-ipc-code-rt-aware.patch
+	FILE: ipc/mqueue.c
+	FILE: ipc/msg.c
+PATCH: 0102-ipc-mqueue-Add-a-critical-section-to-avoid-a-deadloc.patch
+	FILE: ipc/mqueue.c
+PATCH: 0103-relay-fix-timer-madness.patch
+	FILE: kernel/relay.c
+PATCH: 0104-timers-prepare-for-full-preemption.patch
+	FILE: include/linux/timer.h
+	FILE: kernel/timer.c
+PATCH: 0105-timers-prepare-for-full-preemption-improve.patch
+	FILE: kernel/timer.c
+PATCH: 0106-timers-preempt-rt-support.patch
+	FILE: kernel/timer.c
+PATCH: 0107-timer-delay-waking-softirqs-from-the-jiffy-tick.patch
+	FILE: kernel/timer.c
+PATCH: 0108-timers-Avoid-the-switch-timers-base-set-to-NULL-tric.patch
+	FILE: kernel/timer.c
+PATCH: 0109-hrtimers-prepare-full-preemption.patch
+	FILE: include/linux/hrtimer.h
+	FILE: kernel/hrtimer.c
+	FILE: kernel/itimer.c
+	FILE: kernel/posix-timers.c
+PATCH: 0110-hrtimer-fixup-hrtimer-callback-changes-for-preempt-r.patch
+	FILE: include/linux/hrtimer.h
+	FILE: kernel/hrtimer.c
+	FILE: kernel/sched/core.c
+	FILE: kernel/sched/rt.c
+	FILE: kernel/time/tick-sched.c
+	FILE: kernel/watchdog.c
+PATCH: 0111-timer-fd-Prevent-live-lock.patch
+	FILE: fs/timerfd.c
+PATCH: 0112-hrtimer-Raise-softirq-if-hrtimer-irq-stalled.patch
+	FILE: kernel/hrtimer.c
+PATCH: 0113-hrtimer-Move-schedule_work-call-to-helper-thread.patch
+	FILE: kernel/hrtimer.c
+PATCH: 0114-posix-timers-thread-posix-cpu-timers-on-rt.patch
+	FILE: include/linux/init_task.h
+	FILE: include/linux/sched.h
+	FILE: init/main.c
+	FILE: kernel/fork.c
+	FILE: kernel/posix-cpu-timers.c
+PATCH: 0115-posix-timers-Shorten-posix_cpu_timers-CPU-kernel-thr.patch
+	FILE: kernel/posix-cpu-timers.c
+PATCH: 0116-posix-timers-Avoid-wakeups-when-no-timers-are-active.patch
+	FILE: kernel/posix-cpu-timers.c
+PATCH: 0117-sched-delay-put-task.patch.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/fork.c
+PATCH: 0118-sched-limit-nr-migrate.patch.patch
+	FILE: kernel/sched/core.c
+PATCH: 0119-sched-mmdrop-delayed.patch.patch
+	FILE: include/linux/mm_types.h
+	FILE: include/linux/sched.h
+	FILE: kernel/fork.c
+	FILE: kernel/sched/core.c
+PATCH: 0120-sched-rt-mutex-wakeup.patch.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/sched/core.c
+	FILE: kernel/sched/sched.h
+PATCH: 0121-sched-might-sleep-do-not-account-rcu-depth.patch.patch
+	FILE: include/linux/rcupdate.h
+	FILE: kernel/sched/core.c
+PATCH: 0122-sched-cond-resched.patch.patch
+	FILE: kernel/sched/core.c
+PATCH: 0123-cond-resched-softirq-fix.patch.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/sched/core.c
+PATCH: 0124-cond-resched-lock-rt-tweak.patch.patch
+	FILE: include/linux/sched.h
+PATCH: 0125-sched-disable-ttwu-queue.patch.patch
+	FILE: kernel/sched/features.h
+PATCH: 0126-sched-Disable-CONFIG_RT_GROUP_SCHED-on-RT.patch
+	FILE: init/Kconfig
+PATCH: 0127-sched-ttwu-Return-success-when-only-changing-the-sav.patch
+	FILE: kernel/sched/core.c
+PATCH: 0128-sched-workqueue-Only-wake-up-idle-workers-if-not-blo.patch
+	FILE: kernel/sched/core.c
+PATCH: 0129-stop_machine-convert-stop_machine_run-to-PREEMPT_RT.patch
+	FILE: kernel/stop_machine.c
+PATCH: 0130-stomp-machine-raw-lock.patch.patch
+	FILE: kernel/stop_machine.c
+PATCH: 0131-hotplug-Lightweight-get-online-cpus.patch
+	FILE: include/linux/cpu.h
+	FILE: kernel/cpu.c
+PATCH: 0132-hotplug-sync_unplug-No.patch
+	FILE: kernel/cpu.c
+PATCH: 0133-hotplug-Reread-hotplug_pcp-on-pin_current_cpu-retry.patch
+	FILE: kernel/cpu.c
+PATCH: 0134-sched-migrate-disable.patch.patch
+	FILE: include/linux/preempt.h
+	FILE: include/linux/sched.h
+	FILE: kernel/sched/core.c
+	FILE: lib/smp_processor_id.c
+PATCH: 0135-hotplug-use-migrate-disable.patch.patch
+	FILE: kernel/cpu.c
+PATCH: 0136-ftrace-migrate-disable-tracing.patch.patch
+	FILE: include/linux/ftrace_event.h
+	FILE: kernel/trace/trace.c
+	FILE: kernel/trace/trace_events.c
+	FILE: kernel/trace/trace_output.c
+PATCH: 0137-tracing-Show-padding-as-unsigned-short.patch
+	FILE: kernel/trace/trace_events.c
+PATCH: 0138-migrate-disable-rt-variant.patch.patch
+	FILE: include/linux/preempt.h
+PATCH: 0139-sched-Optimize-migrate_disable.patch
+	FILE: kernel/sched/core.c
+PATCH: 0140-sched-Generic-migrate_disable.patch
+	FILE: include/linux/preempt.h
+	FILE: include/linux/sched.h
+	FILE: include/linux/smp.h
+	FILE: kernel/sched/core.c
+	FILE: kernel/trace/trace.c
+	FILE: lib/smp_processor_id.c
+PATCH: 0141-sched-rt-Fix-migrate_enable-thinko.patch
+	FILE: kernel/sched/core.c
+	FILE: kernel/sched/debug.c
+PATCH: 0142-sched-teach-migrate_disable-about-atomic-contexts.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/sched/core.c
+PATCH: 0143-sched-Postpone-actual-migration-disalbe-to-schedule.patch
+	FILE: kernel/sched/core.c
+PATCH: 0144-allow-preemption-in-recursive-migrate_disable-call.patch
+	FILE: kernel/sched/core.c
+PATCH: 0145-sched-Do-not-compare-cpu-masks-in-scheduler.patch
+	FILE: kernel/sched/core.c
+PATCH: 0146-sched-Have-migrate_disable-ignore-bounded-threads.patch
+	FILE: kernel/sched/core.c
+PATCH: 0147-sched-dont-calculate-hweight-in-update_migrate_disab.patch
+	FILE: kernel/sched/core.c
+PATCH: 0148-sched-clear-pf-thread-bound-on-fallback-rq.patch.patch
+	FILE: kernel/sched/core.c
+PATCH: 0149-tracing-use-migrate_disable-to-prevent-beeing-pushed.patch
+	FILE: kernel/trace/ring_buffer.c
+PATCH: 0150-net-netif_rx_ni-migrate-disable.patch.patch
+	FILE: net/core/dev.c
+PATCH: 0151-softirq-Sanitize-softirq-pending-for-NOHZ-RT.patch
+	FILE: include/linux/interrupt.h
+	FILE: kernel/softirq.c
+	FILE: kernel/time/tick-sched.c
+PATCH: 0152-lockdep-rt.patch.patch
+	FILE: include/linux/irqflags.h
+	FILE: kernel/locking/lockdep.c
+PATCH: 0153-mutex-no-spin-on-rt.patch.patch
+	FILE: kernel/Kconfig.locks
+PATCH: 0154-softirq-local-lock.patch.patch
+	FILE: include/linux/bottom_half.h
+	FILE: include/linux/interrupt.h
+	FILE: include/linux/preempt_mask.h
+	FILE: include/linux/sched.h
+	FILE: init/main.c
+	FILE: kernel/softirq.c
+PATCH: 0155-softirq-disable-softirq-stacks-for-rt.patch.patch
+	FILE: arch/powerpc/kernel/irq.c
+	FILE: arch/powerpc/kernel/misc_32.S
+	FILE: arch/powerpc/kernel/misc_64.S
+	FILE: arch/sh/kernel/irq.c
+	FILE: arch/sparc/kernel/irq_64.c
+	FILE: arch/x86/kernel/entry_64.S
+	FILE: arch/x86/kernel/irq_32.c
+	FILE: include/linux/interrupt.h
+PATCH: 0156-softirq-make-fifo.patch.patch
+	FILE: kernel/softirq.c
+PATCH: 0157-tasklet-Prevent-tasklets-from-going-into-infinite-sp.patch
+	FILE: include/linux/interrupt.h
+	FILE: kernel/softirq.c
+PATCH: 0158-genirq-Allow-disabling-of-softirq-processing-in-irq-.patch
+	FILE: include/linux/interrupt.h
+	FILE: include/linux/irq.h
+	FILE: kernel/irq/manage.c
+	FILE: kernel/irq/settings.h
+	FILE: kernel/softirq.c
+PATCH: 0159-local-vars-migrate-disable.patch.patch
+	FILE: include/linux/percpu.h
+PATCH: 0160-md-raid5-Make-raid5_percpu-handling-RT-aware.patch
+	FILE: drivers/md/raid5.c
+	FILE: drivers/md/raid5.h
+PATCH: 0161-rtmutex-futex-prepare-rt.patch.patch
+	FILE: kernel/futex.c
+	FILE: kernel/locking/rtmutex.c
+	FILE: kernel/locking/rtmutex_common.h
+PATCH: 0162-futex-Fix-bug-on-when-a-requeued-RT-task-times-out.patch
+	FILE: kernel/locking/rtmutex.c
+	FILE: kernel/locking/rtmutex_common.h
+PATCH: 0163-futex-Ensure-lock-unlock-symetry-versus-pi_lock-and-.patch
+	FILE: kernel/futex.c
+PATCH: 0164-rtmutex-lock-killable.patch.patch
+	FILE: include/linux/rtmutex.h
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0165-rt-mutex-add-sleeping-spinlocks-support.patch.patch
+	FILE: include/linux/rtmutex.h
+	FILE: kernel/futex.c
+	FILE: kernel/locking/rtmutex.c
+	FILE: kernel/locking/rtmutex_common.h
+PATCH: 0166-spinlock-types-separate-raw.patch.patch
+	FILE: include/linux/rwlock_types.h
+	FILE: include/linux/spinlock_types.h
+	FILE: include/linux/spinlock_types_nort.h
+	FILE: include/linux/spinlock_types_raw.h
+PATCH: 0167-rtmutex-avoid-include-hell.patch.patch
+	FILE: include/linux/rtmutex.h
+PATCH: 0168-rt-add-rt-spinlocks.patch.patch
+	FILE: include/linux/rwlock_types_rt.h
+	FILE: include/linux/spinlock_types.h
+	FILE: include/linux/spinlock_types_rt.h
+PATCH: 0169-rt-add-rt-to-mutex-headers.patch.patch
+	FILE: include/linux/mutex.h
+	FILE: include/linux/mutex_rt.h
+PATCH: 0170-rwsem-add-rt-variant.patch.patch
+	FILE: include/linux/rwsem.h
+	FILE: include/linux/rwsem_rt.h
+	FILE: kernel/locking/Makefile
+PATCH: 0171-rt-Add-the-preempt-rt-lock-replacement-APIs.patch
+	FILE: include/linux/locallock.h
+	FILE: include/linux/rwlock_rt.h
+	FILE: include/linux/spinlock.h
+	FILE: include/linux/spinlock_api_smp.h
+	FILE: include/linux/spinlock_rt.h
+	FILE: kernel/locking/Makefile
+	FILE: kernel/locking/rt.c
+	FILE: kernel/locking/spinlock.c
+	FILE: kernel/locking/spinlock_debug.c
+PATCH: 0172-rwsem-rt-Do-not-allow-readers-to-nest.patch
+	FILE: include/linux/rwsem_rt.h
+	FILE: kernel/locking/rt.c
+PATCH: 0173-condition-migration_disable-on-lock-acquisition.patch
+	FILE: kernel/locking/rt.c
+PATCH: 0174-migrate_disable-pushd-down-in-atomic_dec_and_spin_lo.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0175-Revert-migrate_disable-pushd-down-in-atomic_dec_and_.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0176-migrate_disable-pushd-down-in-rt_spin_trylock_irqsav.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0177-migrate_disable-pushd-down-in-rt_write_trylock_irqsa.patch
+	FILE: kernel/locking/rt.c
+PATCH: 0178-write_lock-migrate_disable-pushdown-to-rt_write_lock.patch
+	FILE: include/linux/rwlock_rt.h
+	FILE: kernel/locking/rt.c
+PATCH: 0179-read_lock-migrate_disable-pushdown-to-rt_read_lock.patch
+	FILE: include/linux/rwlock_rt.h
+	FILE: kernel/locking/rt.c
+PATCH: 0180-rwlock-disable-migration-before-taking-a-lock.patch
+	FILE: kernel/locking/rt.c
+PATCH: 0181-rt-Cleanup-of-unnecessary-do-while-0-in-read-write-_.patch
+	FILE: include/linux/rwlock_rt.h
+PATCH: 0182-percpu-rwsem-compile-fix.patch
+	FILE: kernel/locking/percpu-rwsem.c
+PATCH: 0183-rtmutex-add-a-first-shot-of-ww_mutex.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0184-bad-return-value-in-__mutex_lock_check_stamp.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0185-rwlocks-Fix-section-mismatch.patch
+	FILE: include/linux/rwlock_types.h
+	FILE: kernel/fork.c
+PATCH: 0186-timer-handle-idle-trylock-in-get-next-timer-irq.patc.patch
+	FILE: include/linux/spinlock_rt.h
+	FILE: kernel/locking/rtmutex.c
+	FILE: kernel/timer.c
+PATCH: 0187-timers-do-not-raise-softirq-unconditionally.patch
+	FILE: include/linux/hrtimer.h
+	FILE: kernel/hrtimer.c
+	FILE: kernel/timer.c
+PATCH: 0188-timer-Raise-softirq-if-there-s-irq_work.patch
+	FILE: kernel/timer.c
+PATCH: 0189-timer-rt-Always-raise-the-softirq-if-there-s-irq_wor.patch
+	FILE: kernel/timer.c
+PATCH: 0190-rtmutex-use-a-trylock-for-waiter-lock-in-trylock.patch
+	FILE: include/linux/spinlock_rt.h
+	FILE: kernel/locking/rtmutex.c
+	FILE: kernel/timer.c
+PATCH: 0191-timer-do-not-spin_trylock-on-UP.patch
+	FILE: kernel/timer.c
+PATCH: 0192-rcu-Frob-softirq-test.patch
+	FILE: kernel/rcu/tree_plugin.h
+PATCH: 0193-rcu-Merge-RCU-bh-into-RCU-preempt.patch
+	FILE: include/linux/rcupdate.h
+	FILE: include/linux/rcutree.h
+	FILE: kernel/rcu/tree.c
+	FILE: kernel/rcu/update.c
+PATCH: 0194-rcu-more-fallout.patch.patch
+	FILE: kernel/rcu/tiny.c
+PATCH: 0195-rcu-Make-ksoftirqd-do-RCU-quiescent-states.patch
+	FILE: include/linux/rcupdate.h
+	FILE: kernel/rcu/tree.c
+	FILE: kernel/rcu/tree_plugin.h
+	FILE: kernel/softirq.c
+PATCH: 0196-rcutree-rcu_bh_qs-disable-irq-while-calling-rcu_pree.patch
+	FILE: kernel/rcu/tree.c
+PATCH: 0197-lglocks-rt.patch.patch
+	FILE: include/linux/lglock.h
+	FILE: kernel/locking/lglock.c
+PATCH: 0198-stomp-machine-create-lg_global_trylock_relax-primiti.patch
+	FILE: include/linux/lglock.h
+	FILE: include/linux/spinlock_rt.h
+	FILE: kernel/locking/lglock.c
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0199-stomp-machine-use-lg_global_trylock_relax-to-dead-wi.patch
+	FILE: kernel/stop_machine.c
+PATCH: 0200-serial-8250-Clean-up-the-locking-for-rt.patch
+	FILE: drivers/tty/serial/8250/8250_core.c
+		Reversed (or previously applied) patch detected!  Assume -R? [n] 
+		Apply anyway? [n] 
+		Skipping patch.
+		2 out of 2 hunks ignored -- saving rejects to file drivers/tty/serial/8250/8250_core.c.rej
+PATCH: 0201-drivers-tty-fix-omap-lock-crap.patch.patch
+	FILE: drivers/tty/serial/omap-serial.c
+		Hunk #1 succeeded at 1252 (offset -27 lines).
+		Hunk #2 succeeded at 1284 (offset -27 lines).
+PATCH: 0202-drivers-tty-pl011-irq-disable-madness.patch.patch
+	FILE: drivers/tty/serial/amba-pl011.c
+PATCH: 0203-rt-Improve-the-serial-console-PASS_LIMIT.patch
+	FILE: drivers/tty/serial/8250/8250_core.c
+PATCH: 0204-fs-namespace-preemption-fix.patch
+	FILE: fs/namespace.c
+PATCH: 0205-mm-Protect-activate_mm-by-preempt_-disable-enable-_r.patch
+	FILE: fs/exec.c
+	FILE: mm/mmu_context.c
+PATCH: 0206-fs-block-rt-support.patch.patch
+	FILE: block/blk-core.c
+PATCH: 0207-fs-ntfs-disable-interrupt-only-on-RT.patch
+	FILE: fs/ntfs/aops.c
+PATCH: 0208-fs-jbd-pull-your-plug-when-waiting-for-space.patch
+	FILE: fs/jbd/checkpoint.c
+PATCH: 0209-fs-jbd2-pull-your-plug-when-waiting-for-space.patch
+	FILE: fs/jbd2/checkpoint.c
+PATCH: 0210-x86-Convert-mce-timer-to-hrtimer.patch
+	FILE: arch/x86/kernel/cpu/mcheck/mce.c
+PATCH: 0211-x86-mce-Defer-mce-wakeups-to-threads-for-PREEMPT_RT.patch
+	FILE: arch/x86/kernel/cpu/mcheck/mce.c
+PATCH: 0212-x86-stackprotector-Avoid-random-pool-on-rt.patch
+	FILE: arch/x86/include/asm/stackprotector.h
+PATCH: 0213-x86-Use-generic-rwsem_spinlocks-on-rt.patch
+	FILE: arch/x86/Kconfig
+PATCH: 0214-epoll.patch.patch
+	FILE: fs/eventpoll.c
+PATCH: 0215-mm-vmalloc.patch.patch
+	FILE: mm/vmalloc.c
+PATCH: 0216-block-mq-use-cpu_light.patch
+	FILE: block/blk-mq.c
+	FILE: block/blk-mq.h
+PATCH: 0217-rt-Introduce-cpu_chill.patch
+	FILE: include/linux/delay.h
+PATCH: 0218-rt-Make-cpu_chill-use-hrtimer-instead-of-msleep.patch
+	FILE: include/linux/delay.h
+	FILE: kernel/hrtimer.c
+PATCH: 0219-kernel-hrtimer-be-non-freezeable-in-cpu_chill.patch
+	FILE: kernel/hrtimer.c
+PATCH: 0220-cpu_chill-Add-a-UNINTERRUPTIBLE-hrtimer_nanosleep.patch
+	FILE: kernel/hrtimer.c
+PATCH: 0221-blk-mq-revert-raw-locks-post-pone-notifier-to-POST_D.patch
+	FILE: block/blk-mq-cpu.c
+	FILE: block/blk-mq.c
+PATCH: 0222-block-Use-cpu_chill-for-retry-loops.patch
+	FILE: block/blk-ioc.c
+PATCH: 0223-fs-dcache-Use-cpu_chill-in-trylock-loops.patch
+	FILE: fs/autofs4/autofs_i.h
+	FILE: fs/autofs4/expire.c
+	FILE: fs/dcache.c
+	FILE: fs/namespace.c
+PATCH: 0224-net-Use-cpu_chill-instead-of-cpu_relax.patch
+	FILE: net/packet/af_packet.c
+	FILE: net/rds/ib_rdma.c
+PATCH: 0225-workqueue-Use-normal-rcu.patch
+	FILE: kernel/workqueue.c
+PATCH: 0226-Use-local-irq-lock-instead-of-irq-disable-regions.patch
+	FILE: kernel/workqueue.c
+PATCH: 0227-workqueue-vs-ata-piix-livelock-fixup.patch
+	FILE: kernel/workqueue.c
+PATCH: 0228-sched-Distangle-worker-accounting-from-rqlock.patch
+	FILE: kernel/sched/core.c
+	FILE: kernel/workqueue.c
+	FILE: kernel/workqueue_internal.h
+PATCH: 0229-idr-Use-local-lock-instead-of-preempt-enable-disable.patch
+	FILE: include/linux/idr.h
+	FILE: lib/idr.c
+PATCH: 0230-percpu_ida-use-locklocks.patch
+	FILE: lib/percpu_ida.c
+PATCH: 0231-debugobjects-rt.patch.patch
+	FILE: lib/debugobjects.c
+PATCH: 0232-jump-label-rt.patch.patch
+	FILE: include/linux/jump_label.h
+PATCH: 0233-use-skbufhead-with-raw-lock.patch
+	FILE: include/linux/netdevice.h
+	FILE: include/linux/skbuff.h
+	FILE: net/core/dev.c
+PATCH: 0234-x86-no-perf-irq-work-rt.patch.patch
+	FILE: arch/x86/kernel/irq_work.c
+	FILE: kernel/irq_work.c
+	FILE: kernel/timer.c
+PATCH: 0235-irq_work-allow-certain-work-in-hard-irq-context.patch
+	FILE: arch/arm/kernel/smp.c
+	FILE: arch/powerpc/kernel/time.c
+	FILE: arch/sparc/kernel/pcr.c
+	FILE: include/linux/irq_work.h
+	FILE: kernel/irq_work.c
+	FILE: kernel/time/tick-sched.c
+	FILE: kernel/timer.c
+PATCH: 0236-printk-rt-aware.patch.patch
+	FILE: kernel/printk/printk.c
+PATCH: 0237-HACK-printk-drop-the-logbuf_lock-more-often.patch
+	FILE: kernel/printk/printk.c
+PATCH: 0238-Powerpc-Use-generic-rwsem-on-RT.patch
+	FILE: arch/powerpc/Kconfig
+PATCH: 0239-power-disable-highmem-on-rt.patch.patch
+	FILE: arch/powerpc/Kconfig
+		Hunk #1 succeeded at 295 (offset 1 line).
+PATCH: 0240-arm-disable-highmem-on-rt.patch.patch
+	FILE: arch/arm/Kconfig
+		Hunk #1 succeeded at 1791 (offset 1 line).
+PATCH: 0241-ARM-at91-tclib-Default-to-tclib-timer-for-RT.patch
+	FILE: drivers/misc/Kconfig
+PATCH: 0242-arm-unwind-use-a-raw_spin_lock.patch
+	FILE: arch/arm/kernel/unwind.c
+PATCH: 0243-mips-disable-highmem-on-rt.patch.patch
+	FILE: arch/mips/Kconfig
+PATCH: 0244-net-Avoid-livelock-in-net_tx_action-on-RT.patch
+	FILE: net/core/dev.c
+PATCH: 0245-net-sysrq-via-icmp.patch
+	FILE: Documentation/sysrq.txt
+	FILE: include/net/netns/ipv4.h
+	FILE: net/ipv4/icmp.c
+	FILE: net/ipv4/sysctl_net_ipv4.c
+PATCH: 0246-kgdb-serial-Short-term-workaround.patch
+	FILE: drivers/tty/serial/8250/8250_core.c
+		Hunk #2 succeeded at 3173 with fuzz 2 (offset 281 lines).
+	FILE: include/linux/kdb.h
+	FILE: kernel/debug/kdb/kdb_io.c
+PATCH: 0247-add-sys-kernel-realtime-entry.patch
+	FILE: kernel/ksysfs.c
+PATCH: 0248-mm-rt-kmap_atomic-scheduling.patch
+	FILE: arch/x86/kernel/process_32.c
+	FILE: arch/x86/mm/highmem_32.c
+	FILE: arch/x86/mm/iomap_32.c
+	FILE: include/linux/highmem.h
+	FILE: include/linux/sched.h
+	FILE: mm/highmem.c
+	FILE: mm/memory.c
+PATCH: 0249-x86-highmem-add-a-already-used-pte-check.patch
+	FILE: arch/x86/mm/iomap_32.c
+PATCH: 0250-arm-highmem-flush-tlb-on-unmap.patch
+	FILE: arch/arm/mm/highmem.c
+PATCH: 0251-arm-enable-highmem-for-rt.patch.patch
+	FILE: arch/arm/Kconfig
+		Hunk #1 succeeded at 1791 (offset 1 line).
+	FILE: arch/arm/include/asm/switch_to.h
+	FILE: arch/arm/mm/highmem.c
+	FILE: include/linux/highmem.h
+PATCH: 0252-ipc-sem-Rework-semaphore-wakeups.patch
+	FILE: ipc/sem.c
+PATCH: 0253-x86-kvm-require-const-tsc-for-rt.patch.patch
+	FILE: arch/x86/kvm/x86.c
+PATCH: 0254-scsi-fcoe-rt-aware.patch.patch
+	FILE: drivers/scsi/fcoe/fcoe.c
+	FILE: drivers/scsi/fcoe/fcoe_ctlr.c
+	FILE: drivers/scsi/libfc/fc_exch.c
+PATCH: 0255-x86-crypto-Reduce-preempt-disabled-regions.patch
+	FILE: arch/x86/crypto/aesni-intel_glue.c
+PATCH: 0256-crypto-Reduce-preempt-disabled-regions-more-algos.patch
+	FILE: arch/x86/crypto/cast5_avx_glue.c
+	FILE: arch/x86/crypto/glue_helper.c
+PATCH: 0257-dm-Make-rt-aware.patch
+	FILE: drivers/md/dm.c
+PATCH: 0258-acpi-rt-Convert-acpi_gbl_hardware-lock-back-to-a-raw.patch
+	FILE: drivers/acpi/acpica/acglobal.h
+	FILE: drivers/acpi/acpica/hwregs.c
+	FILE: drivers/acpi/acpica/hwxface.c
+	FILE: drivers/acpi/acpica/utmutex.c
+	FILE: include/acpi/platform/aclinux.h
+PATCH: 0259-cpumask-Disable-CONFIG_CPUMASK_OFFSTACK-for-RT.patch
+	FILE: arch/x86/Kconfig
+	FILE: lib/Kconfig
+PATCH: 0260-random-Make-it-work-on-rt.patch
+	FILE: drivers/char/random.c
+	FILE: include/linux/irqdesc.h
+	FILE: include/linux/random.h
+	FILE: kernel/irq/handle.c
+	FILE: kernel/irq/manage.c
+PATCH: 0261-seqlock-Prevent-rt-starvation.patch
+	FILE: include/linux/seqlock.h
+	FILE: include/net/dst.h
+	FILE: include/net/neighbour.h
+PATCH: 0262-seqlock-consolidate-spin_lock-unlock-waiting-with-sp.patch
+	FILE: include/linux/seqlock.h
+PATCH: 0263-cpu-Make-hotplug.lock-a-sleeping-spinlock-on-RT.patch
+	FILE: kernel/cpu.c
+PATCH: 0264-cpu-rt-Rework-cpu-down-for-PREEMPT_RT.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/cpu.c
+	FILE: kernel/sched/core.c
+PATCH: 0265-cpu-hotplug-Document-why-PREEMPT_RT-uses-a-spinlock.patch
+	FILE: kernel/cpu.c
+PATCH: 0266-kernel-cpu-fix-cpu-down-problem-if-kthread-s-cpu-is-.patch
+	FILE: kernel/cpu.c
+PATCH: 0267-kernel-hotplug-restore-original-cpu-mask-oncpu-down.patch
+	FILE: kernel/cpu.c
+PATCH: 0268-cpu_down-move-migrate_enable-back.patch
+	FILE: kernel/cpu.c
+PATCH: 0269-scsi-qla2xxx-Use-local_irq_save_nort-in-qla2x00_poll.patch
+	FILE: drivers/scsi/qla2xxx/qla_inline.h
+PATCH: 0270-net-RT-REmove-preemption-disabling-in-netif_rx.patch
+	FILE: net/core/dev.c
+PATCH: 0271-net-Another-local_irq_disable-kmalloc-headache.patch
+	FILE: net/core/skbuff.c
+PATCH: 0272-net-netfilter-Serialize-xt_write_recseq-sections-on-.patch
+	FILE: include/linux/netfilter/x_tables.h
+	FILE: net/netfilter/core.c
+PATCH: 0273-net-Use-local_bh_disable-in-netif_rx_ni.patch
+	FILE: net/core/dev.c
+PATCH: 0274-net-Add-a-mutex-around-devnet_rename_seq.patch
+	FILE: net/core/dev.c
+PATCH: 0275-crypto-Convert-crypto-notifier-chain-to-SRCU.patch
+	FILE: crypto/algapi.c
+	FILE: crypto/api.c
+	FILE: crypto/internal.h
+PATCH: 0276-lockdep-Selftest-Only-do-hardirq-context-test-for-ra.patch
+	FILE: lib/locking-selftest.c
+PATCH: 0277-rt-rwsem-rwlock-lockdep-annotations.patch
+	FILE: kernel/locking/rt.c
+PATCH: 0278-perf-Make-swevent-hrtimer-run-in-irq-instead-of-soft.patch
+	FILE: kernel/events/core.c
+PATCH: 0279-softirq-Check-preemption-after-reenabling-interrupts.patch
+	FILE: block/blk-iopoll.c
+	FILE: block/blk-softirq.c
+	FILE: include/linux/preempt.h
+	FILE: net/core/dev.c
+PATCH: 0280-softirq-Init-softirq-local-lock-after-per-cpu-sectio.patch
+	FILE: init/main.c
+PATCH: 0281-softirq-Make-serving-softirqs-a-task-flag.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/softirq.c
+PATCH: 0282-softirq-Split-handling-function.patch
+	FILE: kernel/softirq.c
+PATCH: 0283-softirq-Split-softirq-locks.patch
+	FILE: include/linux/sched.h
+	FILE: kernel/softirq.c
+PATCH: 0284-API-cleanup-use-local_lock-not-__local_lock-for-soft.patch
+	FILE: kernel/softirq.c
+PATCH: 0285-softirq-Adapt-NOHZ-softirq-pending-check-to-new-RT-s.patch
+	FILE: kernel/softirq.c
+PATCH: 0286-softirq-make-migrate-disable-enable-conditioned-on-s.patch
+	FILE: kernel/softirq.c
+PATCH: 0287-rcu-Disable-RCU_FAST_NO_HZ-on-RT.patch
+	FILE: init/Kconfig
+PATCH: 0288-rcu-Eliminate-softirq-processing-from-rcutree.patch
+	FILE: kernel/rcu/tree.c
+	FILE: kernel/rcu/tree.h
+	FILE: kernel/rcu/tree_plugin.h
+PATCH: 0289-rcu-make-RCU_BOOST-default-on-RT.patch
+	FILE: init/Kconfig
+PATCH: 0290-sched-Add-support-for-lazy-preemption.patch
+	FILE: arch/x86/include/asm/preempt.h
+	FILE: include/linux/ftrace_event.h
+	FILE: include/linux/preempt.h
+	FILE: include/linux/sched.h
+	FILE: kernel/Kconfig.preempt
+	FILE: kernel/sched/core.c
+	FILE: kernel/sched/fair.c
+	FILE: kernel/sched/features.h
+	FILE: kernel/sched/sched.h
+	FILE: kernel/trace/trace.c
+	FILE: kernel/trace/trace.h
+	FILE: kernel/trace/trace_output.c
+PATCH: 0291-x86-preempt-lazy.patch.patch
+	FILE: arch/x86/Kconfig
+	FILE: arch/x86/include/asm/thread_info.h
+	FILE: arch/x86/kernel/asm-offsets.c
+	FILE: arch/x86/kernel/entry_32.S
+	FILE: arch/x86/kernel/entry_64.S
+PATCH: 0292-arm-preempt-lazy-support.patch.patch
+	FILE: arch/arm/Kconfig
+	FILE: arch/arm/include/asm/thread_info.h
+	FILE: arch/arm/kernel/asm-offsets.c
+	FILE: arch/arm/kernel/entry-armv.S
+	FILE: arch/arm/kernel/signal.c
+PATCH: 0293-powerpc-preempt-lazy-support.patch.patch
+	FILE: arch/powerpc/Kconfig
+		Hunk #1 succeeded at 134 (offset 1 line).
+	FILE: arch/powerpc/include/asm/thread_info.h
+	FILE: arch/powerpc/kernel/asm-offsets.c
+	FILE: arch/powerpc/kernel/entry_32.S
+	FILE: arch/powerpc/kernel/entry_64.S
+PATCH: 0294-leds-trigger-disable-CPU-trigger-on-RT.patch
+	FILE: drivers/leds/trigger/Kconfig
+PATCH: 0295-i2c-omap-drop-the-lock-hard-irq-context.patch
+	FILE: drivers/i2c/busses/i2c-omap.c
+		Hunk #1 succeeded at 951 (offset 72 lines).
+PATCH: 0296-mmci-Remove-bogus-local_irq_save.patch
+	FILE: drivers/mmc/host/mmci.c
+PATCH: 0297-gpu-i915-don-t-open-code-these-things.patch
+	FILE: drivers/gpu/drm/i915/i915_gem.c
+		Hunk #1 succeeded at 4986 (offset 1 line).
+PATCH: 0298-drm-i915-drop-trace_i915_gem_ring_dispatch-on-rt.patch
+	FILE: drivers/gpu/drm/i915/i915_gem_execbuffer.c
+PATCH: 0299-wait.h-include-atomic.h.patch
+	FILE: include/linux/wait.h
+PATCH: 0300-wait-simple-Simple-waitqueue-implementation.patch
+	FILE: include/linux/wait-simple.h
+	FILE: kernel/sched/Makefile
+	FILE: kernel/sched/wait-simple.c
+PATCH: 0301-wait-simple-Rework-for-use-with-completions.patch
+	FILE: include/linux/wait-simple.h
+	FILE: kernel/sched/wait-simple.c
+PATCH: 0302-simple-wait-rename-and-export-the-equivalent-of-wait.patch
+	FILE: include/linux/wait-simple.h
+	FILE: kernel/sched/wait-simple.c
+PATCH: 0303-kernel-treercu-use-a-simple-waitqueue.patch
+	FILE: kernel/rcu/tree.c
+	FILE: kernel/rcu/tree.h
+PATCH: 0304-rcu-more-swait-conversions.patch.patch
+	FILE: kernel/rcu/tree.h
+	FILE: kernel/rcu/tree_plugin.h
+PATCH: 0305-completion-Use-simple-wait-queues.patch
+	FILE: include/linux/completion.h
+	FILE: include/linux/uprobes.h
+	FILE: kernel/sched/completion.c
+	FILE: kernel/sched/core.c
+PATCH: 0306-a-few-open-coded-completions.patch
+	FILE: drivers/net/wireless/orinoco/orinoco_usb.c
+	FILE: drivers/usb/gadget/function/f_fs.c
+		Hunk #1 succeeded at 1095 (offset -25 lines).
+	FILE: drivers/usb/gadget/legacy/inode.c
+PATCH: 0307-rt-ntp-Move-call-to-schedule_delayed_work-to-helper-.patch
+	FILE: kernel/time/ntp.c
+PATCH: 0308-md-disable-bcache.patch
+	FILE: drivers/md/bcache/Kconfig
+PATCH: 0309-disable-preempt-lazy-on-x86-64.patch
+	FILE: arch/x86/Kconfig
+PATCH: 0310-sched-Do-not-clear-PF_NO_SETAFFINITY-flag-in-select_.patch
+	FILE: kernel/sched/core.c
+PATCH: 0311-workqueue-Prevent-deadlock-stall-on-RT.patch
+	FILE: kernel/sched/core.c
+	FILE: kernel/workqueue.c
+PATCH: 0312-gpio-omap-use-raw-locks-for-locking.patch
+	FILE: drivers/gpio/gpio-omap.c
+		Hunk #11 succeeded at 859 with fuzz 1.
+		Hunk #12 succeeded at 872 (offset -10 lines).
+		Hunk #13 succeeded at 887 (offset -10 lines).
+		Hunk #14 succeeded at 932 (offset -10 lines).
+		Hunk #15 succeeded at 958 (offset -10 lines).
+		Hunk #16 succeeded at 973 (offset -10 lines).
+		Hunk #17 succeeded at 986 (offset -10 lines).
+		Hunk #18 succeeded at 1207 (offset -3 lines).
+		Hunk #19 succeeded at 1264 (offset -3 lines).
+		Hunk #20 succeeded at 1317 (offset -3 lines).
+		Hunk #21 succeeded at 1332 (offset -3 lines).
+		Hunk #22 succeeded at 1367 (offset -4 lines).
+		Hunk #23 succeeded at 1428 (offset -5 lines).
+PATCH: 0313-rtmutex-Simplify-rtmutex_slowtrylock.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0314-rtmutex-Simplify-and-document-try_to_take_rtmutex.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0315-rtmutex-No-need-to-keep-task-ref-for-lock-owner-chec.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0316-rtmutex-Clarify-the-boost-deboost-part.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0317-rtmutex-Document-pi-chain-walk.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0318-rtmutex-Simplify-remove_waiter.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0319-rtmutex-Confine-deadlock-logic-to-futex.patch
+	FILE: include/linux/rtmutex.h
+	FILE: kernel/futex.c
+	FILE: kernel/locking/rt.c
+	FILE: kernel/locking/rtmutex-tester.c
+	FILE: kernel/locking/rtmutex.c
+	FILE: kernel/locking/rtmutex_common.h
+PATCH: 0320-rtmutex-Cleanup-deadlock-detector-debug-logic.patch
+	FILE: kernel/locking/rtmutex-debug.c
+	FILE: kernel/locking/rtmutex-debug.h
+	FILE: kernel/locking/rtmutex.c
+	FILE: kernel/locking/rtmutex.h
+	FILE: kernel/locking/rtmutex_common.h
+PATCH: 0321-rtmutex-Avoid-pointless-requeueing-in-the-deadlock-d.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0322-futex-Make-unlock_pi-more-robust.patch
+	FILE: kernel/futex.c
+PATCH: 0323-futex-Use-futex_top_waiter-in-lookup_pi_state.patch
+	FILE: kernel/futex.c
+PATCH: 0324-futex-Split-out-the-waiter-check-from-lookup_pi_stat.patch
+	FILE: kernel/futex.c
+PATCH: 0325-futex-Split-out-the-first-waiter-attachment-from-loo.patch
+	FILE: kernel/futex.c
+PATCH: 0326-futex-Simplify-futex_lock_pi_atomic-and-make-it-more.patch
+	FILE: kernel/futex.c
+PATCH: 0327-locking-rt-mutex-avoid-a-NULL-pointer-dereference-on.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0328-rtmutex.c-Fix-incorrect-waiter-check.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0329-rt-locking-fix-__ww_mutex_lock_interruptible-lockdep.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0330-rtmutex-enable-deadlock-detection-in-ww_mutex_lock-f.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0331-x86-UV-raw_spinlock-conversion.patch
+	FILE: arch/x86/include/asm/uv/uv_bau.h
+	FILE: arch/x86/include/asm/uv/uv_hub.h
+	FILE: arch/x86/kernel/apic/x2apic_uv_x.c
+	FILE: arch/x86/platform/uv/tlb_uv.c
+	FILE: arch/x86/platform/uv/uv_time.c
+PATCH: 0332-ARM-enable-irq-in-translation-section-permission-fau.patch
+	FILE: arch/arm/mm/fault.c
+PATCH: 0333-arm-futex-disable-preemption-during-futex_atomic_cmp.patch
+	FILE: arch/arm/include/asm/futex.h
+PATCH: 0334-ARM-cmpxchg-define-__HAVE_ARCH_CMPXCHG-for-armv6-and.patch
+	FILE: arch/arm/include/asm/cmpxchg.h
+PATCH: 0335-mips-rt-Replace-pagefault_-to-raw-version.patch
+	FILE: arch/mips/mm/init.c
+PATCH: 0336-sas-ata-isci-dont-t-disable-interrupts-in-qc_issue-h.patch
+	FILE: drivers/scsi/libsas/sas_ata.c
+PATCH: 0337-scheduling-while-atomic-in-cgroup-code.patch
+	FILE: mm/memcontrol.c
+PATCH: 0338-work-simple-Simple-work-queue-implemenation.patch
+	FILE: include/linux/work-simple.h
+	FILE: kernel/sched/Makefile
+	FILE: kernel/sched/work-simple.c
+PATCH: 0339-sunrpc-make-svc_xprt_do_enqueue-use-get_cpu_light.patch
+	FILE: net/sunrpc/svc_xprt.c
+PATCH: 0340-Revert-rwsem-rt-Do-not-allow-readers-to-nest.patch
+	FILE: include/linux/rwsem_rt.h
+	FILE: kernel/locking/rt.c
+PATCH: 0341-locking-ww_mutex-fix-ww_mutex-vs-self-deadlock.patch
+	FILE: kernel/locking/rtmutex.c
+PATCH: 0342-thermal-Defer-thermal-wakups-to-threads.patch
+	FILE: drivers/thermal/x86_pkg_temp_thermal.c
+PATCH: 0343-lockdep-selftest-fix-warnings-due-to-missing-PREEMPT.patch
+	FILE: lib/locking-selftest.c
+PATCH: 0344-fs-aio-simple-simple-work.patch
+	FILE: fs/aio.c
+PATCH: 0345-timers-Track-total-number-of-timers-in-list.patch
+	FILE: kernel/timer.c
+PATCH: 0346-timers-Reduce-__run_timers-latency-for-empty-list.patch
+	FILE: kernel/timer.c
+PATCH: 0347-timers-Reduce-future-__run_timers-latency-for-newly-.patch
+	FILE: kernel/timer.c
+PATCH: 0348-timers-Reduce-future-__run_timers-latency-for-first-.patch
+	FILE: kernel/timer.c
+PATCH: 0349-staging-Mark-rtl8821ae-as-broken.patch
+	FILE: drivers/staging/rtl8821ae/Kconfig
+PATCH: 0350-fs-btrfs-fix-rt-deadlock-on-extent_buffer-lock.patch
+	FILE: fs/btrfs/ctree.c
+	FILE: fs/btrfs/extent-tree.c
+PATCH: 0351-Revert-timers-do-not-raise-softirq-unconditionally.patch
+	FILE: include/linux/hrtimer.h
+	FILE: kernel/hrtimer.c
+	FILE: kernel/timer.c
+PATCH: 0352-netpoll-guard-the-access-to-dev-npinfo-with-rcu_read.patch
+	FILE: include/linux/netpoll.h
+PATCH: 0353-kernel-irq_work-fix-no_hz-deadlock.patch
+	FILE: arch/arm/kernel/smp.c
+	FILE: arch/powerpc/kernel/time.c
+	FILE: arch/sparc/kernel/pcr.c
+	FILE: arch/x86/kernel/irq_work.c
+	FILE: kernel/irq_work.c
+	FILE: kernel/time/tick-sched.c
+	FILE: kernel/timer.c
+PATCH: 0354-KVM-lapic-mark-LAPIC-timer-handler-as-irqsafe.patch
+	FILE: arch/x86/kvm/lapic.c
+PATCH: 0355-KVM-use-simple-waitqueue-for-vcpu-wq.patch
+	FILE: arch/arm/kvm/arm.c
+	FILE: arch/arm/kvm/psci.c
+	FILE: arch/powerpc/include/asm/kvm_host.h
+	FILE: arch/powerpc/kvm/book3s_hv.c
+	FILE: arch/s390/include/asm/kvm_host.h
+	FILE: arch/x86/kvm/lapic.c
+	FILE: include/linux/kvm_host.h
+	FILE: virt/kvm/async_pf.c
+	FILE: virt/kvm/kvm_main.c
+PATCH: 0356-hotplug-Use-set_cpus_allowed_ptr-in-sync_unplug_thre.patch
+	FILE: kernel/cpu.c
+PATCH: 0357-rt-nohz_full-fix-nohz_full-for-PREEMPT_RT_FULL.patch
+	FILE: kernel/sched/core.c
+	FILE: kernel/time/tick-sched.c
+PATCH: 0358-irq_work-Introduce-arch_irq_work_has_interrupt.patch
+	FILE: arch/alpha/include/asm/Kbuild
+	FILE: arch/arc/include/asm/Kbuild
+	FILE: arch/arm/include/asm/Kbuild
+	FILE: arch/arm64/include/asm/Kbuild
+	FILE: arch/avr32/include/asm/Kbuild
+	FILE: arch/blackfin/include/asm/Kbuild
+	FILE: arch/c6x/include/asm/Kbuild
+	FILE: arch/cris/include/asm/Kbuild
+	FILE: arch/frv/include/asm/Kbuild
+	FILE: arch/hexagon/include/asm/Kbuild
+	FILE: arch/ia64/include/asm/Kbuild
+	FILE: arch/m32r/include/asm/Kbuild
+	FILE: arch/m68k/include/asm/Kbuild
+	FILE: arch/metag/include/asm/Kbuild
+	FILE: arch/microblaze/include/asm/Kbuild
+	FILE: arch/mips/include/asm/Kbuild
+	FILE: arch/mn10300/include/asm/Kbuild
+	FILE: arch/openrisc/include/asm/Kbuild
+	FILE: arch/parisc/include/asm/Kbuild
+	FILE: arch/powerpc/include/asm/Kbuild
+	FILE: arch/s390/include/asm/Kbuild
+	FILE: arch/score/include/asm/Kbuild
+	FILE: arch/sh/include/asm/Kbuild
+	FILE: arch/sparc/include/asm/Kbuild
+	FILE: arch/tile/include/asm/Kbuild
+	FILE: arch/um/include/asm/Kbuild
+	FILE: arch/unicore32/include/asm/Kbuild
+	FILE: arch/x86/include/asm/Kbuild
+	FILE: arch/xtensa/include/asm/Kbuild
+	FILE: include/asm-generic/irq_work.h
+	FILE: include/linux/irq_work.h
+PATCH: 0359-irq_work-Split-raised-and-lazy-lists.patch
+	FILE: include/linux/irq_work.h
+	FILE: kernel/irq_work.c
+	FILE: kernel/timer.c
+PATCH: 0360-Revert-slub-delay-ctor-until-the-object-is-requested.patch
+	FILE: mm/slub.c
+PATCH: 0361-mm-slub-move-slab-initialization-into-irq-enabled-re.patch
+	FILE: mm/slub.c
+PATCH: 0362-x86-Tell-irq-work-about-self-IPI-support-3.14.patch
+	FILE: arch/x86/include/asm/Kbuild
+	FILE: arch/x86/include/asm/irq_work.h
+	FILE: arch/x86/kernel/irq_work.c
+PATCH: 0363-xfs-Disable-percpu-SB-on-PREEMPT_RT_FULL.patch
+	FILE: fs/xfs/xfs_linux.h
+PATCH: 0364-powerpc-kvm-Disable-in-kernel-MPIC-emulation-for-PRE.patch
+	FILE: arch/powerpc/kvm/Kconfig
+PATCH: 0365-Linux-3.14.51-rt52-REBASE.patch
+	FILE: localversion-rt
