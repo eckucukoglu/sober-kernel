@@ -27,6 +27,8 @@
 #else
 #define CURRENT_THREAD_INFO(dest, sp)	rlwinm dest, sp, 0, 0, 31-THREAD_SHIFT
 #endif
+/* mask must be expressable within 16 bits to satisfy 'andi' instruction reqs */
+#define TIF_GRSEC_SETXID	6	/* update credentials on syscall entry/exit */
 
 #ifndef __ASSEMBLY__
 #include <linux/cache.h>

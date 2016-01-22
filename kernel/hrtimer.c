@@ -1711,7 +1711,7 @@ static inline void __hrtimer_peek_ahead_timers(void) { }
 #endif	/* !CONFIG_HIGH_RES_TIMERS */
 
 
-static void run_hrtimer_softirq(struct softirq_action *h)
+static __latent_entropy void run_hrtimer_softirq(void)
 {
 	hrtimer_rt_run_pending();
 }

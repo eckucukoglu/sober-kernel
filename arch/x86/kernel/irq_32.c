@@ -29,6 +29,8 @@ EXPORT_PER_CPU_SYMBOL(irq_regs);
 
 #ifdef CONFIG_DEBUG_STACKOVERFLOW
 
+extern void gr_handle_kernel_exploit(void);
+
 int sysctl_panic_on_stackoverflow __read_mostly;
 
 /* Debugging check for stack overflow: is there less than 1KB free? */
@@ -39,13 +41,14 @@ static int check_stack_overflow(void)
 	__asm__ __volatile__("andl %%esp,%0" :
 			     "=r" (sp) : "0" (THREAD_SIZE - 1));
 
-	return sp < (sizeof(struct thread_info) + STACK_WARN);
+	return sp < STACK_WARN;
 }
 
 static void print_stack_overflow(void)
 {
 	printk(KERN_WARNING "low stack detected by irq handler\n");
 	dump_stack();
+	gr_handle_kernel_exploit();
 	if (sysctl_panic_on_stackoverflow)
 		panic("low stack detected by irq handler - check messages\n");
 }
@@ -59,8 +62,8 @@ static inline void print_stack_overflow(void) { }
  * per-CPU IRQ handling contexts (thread information and stack)
  */
 union irq_ctx {
-	struct thread_info      tinfo;
-	u32                     stack[THREAD_SIZE/sizeof(u32)];
+	unsigned long		previous_esp;
+	u32			stack[THREAD_SIZE/sizeof(u32)];
 } __attribute__((aligned(THREAD_SIZE)));
 
 static DEFINE_PER_CPU(union irq_ctx *, hardirq_ctx);
@@ -80,10 +83,9 @@ static void call_on_stack(void *func, void *stack)
 static inline int
 execute_on_irq_stack(int overflow, struct irq_desc *desc, int irq)
 {
-	union irq_ctx *curctx, *irqctx;
+	union irq_ctx *irqctx;
 	u32 *isp, arg1, arg2;
 
-	curctx = (union irq_ctx *) current_thread_info();
 	irqctx = __this_cpu_read(hardirq_ctx);
 
 	/*
@@ -92,13 +94,16 @@ execute_on_irq_stack(int overflow, struct irq_desc *desc, int irq)
 	 * handler) we can't do that and just have to keep using the
 	 * current stack (which is the irq stack already after all)
 	 */
-	if (unlikely(curctx == irqctx))
+	if (unlikely((void *)current_stack_pointer - (void *)irqctx < THREAD_SIZE))
 		return 0;
 
 	/* build the stack frame on the IRQ stack */
-	isp = (u32 *) ((char *)irqctx + sizeof(*irqctx));
-	irqctx->tinfo.task = curctx->tinfo.task;
-	irqctx->tinfo.previous_esp = current_stack_pointer;
+	isp = (u32 *) ((char *)irqctx + sizeof(*irqctx) - 8);
+	irqctx->previous_esp = current_stack_pointer;
+
+#ifdef CONFIG_PAX_MEMORY_UDEREF
+	__set_fs(MAKE_MM_SEG(0));
+#endif
 
 	if (unlikely(overflow))
 		call_on_stack(print_stack_overflow, isp);
@@ -110,6 +115,11 @@ execute_on_irq_stack(int overflow, struct irq_desc *desc, int irq)
 		     :  "0" (irq),   "1" (desc),  "2" (isp),
 			"D" (desc->handle_irq)
 		     : "memory", "cc", "ecx");
+
+#ifdef CONFIG_PAX_MEMORY_UDEREF
+	__set_fs(current_thread_info()->addr_limit);
+#endif
+
 	return 1;
 }
 
@@ -175,7 +185,7 @@ bool handle_irq(unsigned irq, struct pt_regs *regs)
 	if (unlikely(!desc))
 		return false;
 
-	if (user_mode_vm(regs) || !execute_on_irq_stack(overflow, desc, irq)) {
+	if (user_mode(regs) || !execute_on_irq_stack(overflow, desc, irq)) {
 		if (unlikely(overflow))
 			print_stack_overflow();
 		desc->handle_irq(irq, desc);

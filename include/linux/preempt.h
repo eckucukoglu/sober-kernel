@@ -40,11 +40,16 @@ extern void preempt_count_sub(int val);
 #define preempt_count_dec_and_test() __preempt_count_dec_and_test()
 #endif
 
+#define raw_preempt_count_add(val)	__preempt_count_add(val)
+#define raw_preempt_count_sub(val)	__preempt_count_sub(val)
+
 #define __preempt_count_inc() __preempt_count_add(1)
 #define __preempt_count_dec() __preempt_count_sub(1)
 
 #define preempt_count_inc() preempt_count_add(1)
+#define raw_preempt_count_inc() raw_preempt_count_add(1)
 #define preempt_count_dec() preempt_count_sub(1)
+#define raw_preempt_count_dec() raw_preempt_count_sub(1)
 
 #ifdef CONFIG_PREEMPT_LAZY
 #define add_preempt_lazy_count(val)	do { preempt_lazy_count() += (val); } while (0)
@@ -74,6 +79,12 @@ do { \
 	barrier(); \
 } while (0)
 
+#define raw_preempt_disable() \
+do { \
+	raw_preempt_count_inc(); \
+	barrier(); \
+} while (0)
+
 #define sched_preempt_enable_no_resched() \
 do { \
 	barrier(); \
@@ -87,6 +98,12 @@ do { \
 # define preempt_enable_no_resched() preempt_enable()
 # define preempt_check_resched_rt() barrier();
 #endif
+
+#define raw_preempt_enable_no_resched() \
+do { \
+	barrier(); \
+	raw_preempt_count_dec(); \
+} while (0)
 
 #ifdef CONFIG_PREEMPT
 #define preempt_enable() \
@@ -159,8 +176,10 @@ do { \
  * region.
  */
 #define preempt_disable()			barrier()
+#define raw_preempt_disable()			barrier()
 #define sched_preempt_enable_no_resched()	barrier()
 #define preempt_enable_no_resched()		barrier()
+#define raw_preempt_enable_no_resched()		barrier()
 #define preempt_enable()			barrier()
 #define preempt_check_resched()			do { } while (0)
 
@@ -175,10 +194,12 @@ do { \
 /*
  * Modules have no business playing preemption tricks.
  */
+#ifndef CONFIG_PAX_KERNEXEC
 #undef sched_preempt_enable_no_resched
 #undef preempt_enable_no_resched
 #undef preempt_enable_no_resched_notrace
 #undef preempt_check_resched
+#endif
 #endif
 
 #define preempt_set_need_resched() \

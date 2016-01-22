@@ -180,7 +180,9 @@ static inline void kick_all_cpus_sync(void) {  }
 #endif
 
 #define get_cpu()		({ preempt_disable(); smp_processor_id(); })
+#define raw_get_cpu()		({ raw_preempt_disable(); raw_smp_processor_id(); })
 #define put_cpu()		preempt_enable()
+#define raw_put_cpu_no_resched()	raw_preempt_enable_no_resched()
 
 #define get_cpu_light()		({ migrate_disable(); smp_processor_id(); })
 #define put_cpu_light()		migrate_enable()

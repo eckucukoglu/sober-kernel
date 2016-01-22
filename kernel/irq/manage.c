@@ -940,7 +940,7 @@ static int irq_thread(void *data)
 
 		action_ret = handler_fn(desc, action);
 		if (action_ret == IRQ_HANDLED)
-			atomic_inc(&desc->threads_handled);
+			atomic_inc_unchecked(&desc->threads_handled);
 
 #ifdef CONFIG_PREEMPT_RT_FULL
 		migrate_disable();

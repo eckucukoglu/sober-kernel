@@ -54,7 +54,7 @@ irq_cpustat_t irq_stat[NR_CPUS] ____cacheline_aligned;
 EXPORT_SYMBOL(irq_stat);
 #endif
 
-static struct softirq_action softirq_vec[NR_SOFTIRQS] __cacheline_aligned_in_smp;
+static struct softirq_action softirq_vec[NR_SOFTIRQS] __read_only __aligned(PAGE_SIZE);
 
 DEFINE_PER_CPU(struct task_struct *, ksoftirqd);
 
@@ -178,7 +178,7 @@ static void handle_softirq(unsigned int vec_nr, int cpu, int need_rcu_bh_qs)
 	kstat_incr_softirqs_this_cpu(vec_nr);
 
 	trace_softirq_entry(vec_nr);
-	h->action(h);
+	h->action();
 	trace_softirq_exit(vec_nr);
 	if (unlikely(prev_count != preempt_count())) {
 		pr_err("huh, entered softirq %u %s %p with preempt_count %08x, exited with %08x?\n",
@@ -819,7 +819,7 @@ void raise_softirq(unsigned int nr)
 	local_irq_restore(flags);
 }
 
-void open_softirq(int nr, void (*action)(struct softirq_action *))
+void __init open_softirq(int nr, void (*action)(void))
 {
 	softirq_vec[nr].action = action;
 }
@@ -1000,7 +1000,7 @@ static void tasklet_action(struct softirq_action *a)
 	__tasklet_action(a, list);
 }
 
-static void tasklet_hi_action(struct softirq_action *a)
+static __latent_entropy void tasklet_hi_action(struct softirq_action *a)
 {
 	struct tasklet_struct *list;
 
@@ -1204,7 +1204,7 @@ static struct notifier_block cpu_nfb = {
 	.notifier_call = cpu_callback
 };
 
-static struct smp_hotplug_thread softirq_threads = {
+static struct smp_hotplug_thread softirq_threads __read_only = {
 	.store			= &ksoftirqd,
 	.setup			= ksoftirqd_set_sched_params,
 	.cleanup		= ksoftirqd_clr_sched_params,

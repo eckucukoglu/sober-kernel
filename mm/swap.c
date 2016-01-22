@@ -32,6 +32,7 @@
 #include <linux/gfp.h>
 #include <linux/uio.h>
 #include <linux/locallock.h>
+#include <linux/hugetlb.h>
 
 #include "internal.h"
 
@@ -80,6 +81,8 @@ static void __put_compound_page(struct page *page)
 
 	__page_cache_release(page);
 	dtor = get_compound_page_dtor(page);
+	if (!PageHuge(page))
+		BUG_ON(dtor != free_compound_page);
 	(*dtor)(page);
 }
 
